@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Mi primera página</title>
+	</head>
+	<body></body>
+<script>
+
+var cadena = "Ponemos cualquier texto.";
+
+console.log("Longitud: " + cadena.length);
+
+console.log("Mayúsculas: " + cadena.toUpperCase() );
+console.log("Minúsculas: " + cadena.toLowerCase() );
+
+console.log("Caracter 4: " + cadena.charAt(4) );
+console.log("Caracter 4: " + cadena[4] ); // Lo mismo que la anterior
+
+console.log("Index of \"t\": " + cadena.indexOf("t") );
+console.log("Index of \"t\": " + cadena.lastIndexOf("t") );
+
+console.log("substring 9: " + cadena.substring(9) );
+console.log("substring 9, 4: " + cadena.substring(9, 4) );
+
+var arrarDeCadena = cadena.split(" ");
+
+console.log("****** EMPEZANDO CON ARRAYS  *******");
+console.log("palabra 2da: " + arrarDeCadena[1] );
+console.log("palabra 6ta: " + typeof arrarDeCadena[6] );
+arrarDeCadena[6] = 83;
+console.log("elemento 1 " + typeof arrarDeCadena[1] );
+console.log("elemento 6: " + typeof arrarDeCadena[6] );
+
+console.log("Pop elemento 6: " + arrarDeCadena.pop() );
+console.log("Pop elemento 6 después: " + typeof arrarDeCadena[6] );
+
+arrarDeCadena.push("OTRO");
+arrarDeCadena.push(7);
+arrarDeCadena.push(false);
+arrarDeCadena[18] = 83;
+arrarDeCadena = ["jkh kj", 898,false];
+
+console.log("Todo el array: " + arrarDeCadena.join(",") );
+
+var otraCadena = arrarDeCadena.join("*");
+console.log("Union otraCadena : " + otraCadena );
+
+
+</script>
+</html>
