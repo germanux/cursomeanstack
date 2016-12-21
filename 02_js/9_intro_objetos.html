@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Intro objetos</title>
+	</head>
+	<body></body>
+<script>
+var numero = prompt("Dime numero alumnos");
+numero = parseInt(numero);	
+var alumnos = new Array();
+for (var i = 0; i < numero; i++) {
+	var nombre = prompt("Nombre alumno " + i);
+	var fecha =  prompt("Fecha nacimiento DD-MM-AAAA:" + i);
+	
+	var nuevoAlmuno = new Object();
+	nuevoAlmuno.nombre = nombre;
+	var infoFecha = fecha.split("-");
+	// Forma dos:
+	nuevoAlmuno.fecha = new Date(
+		parseInt(infoFecha[2]), // Año
+		infoFecha[1] - 1, // Mes
+		parseInt(infoFecha[0]));
+	// alumnos.push(nuevoAlmuno);
+	alumnos[i] = nuevoAlmuno;
+}	
+document.write("<table>");
+for (var i = 0; i < numero; i++) {
+	document.write("<tr><td>Nombre : " + nuevoAlmuno.nombre 
+		+ "</td><td>fecha: " + nuevoAlmuno.fecha+ "</td></tr>");
+}
+document.write("</table>");
+
+	// Forma uno:
+	/*nuevoAlmuno.fecha = new Date();
+	nuevoAlmuno.fecha.setDay(parseInt(infoFecha[0]));
+	nuevoAlmuno.fecha.setMonth(parseInt(infoFecha[1]));
+	nuevoAlmuno.fecha.setFullYear(parseInt(infoFecha[2]));*/
+</script>
+</html>
+

@@ -6,15 +6,23 @@
 	</head>
 	<body></body>
 <script>
+	alert(window.location.href);
+	
 	var numeros = new Array();
+	alert(parseInt("klj"));
 	for (var i = 0; i < 3; i++) {
 		do {
 			numeros[i] = prompt("Introduzca el num " + i);
 			
-		} while (numeros[i] == null || isNaN(numeros[i]) || numeros[i] == "");				
+		} while (	numeros[i] == null 
+					|| isNaN(numeros[i])
+					|| numeros[i] == "");				
 	}
+	var maximo = numeros[0];
 	for (var i = 0; i < 3; i++) {
-		numeros[i] = parseInt(numeros[i]);			
+		numeros[i] = parseInt(numeros[i]);	
+		if (numeros[i] > maximo)
+			maximo= numeros[i];
 	}
 	if (numeros[0] >= numeros[1] && numeros[0] >= numeros[2]) 
 	{
@@ -26,11 +34,10 @@
 	} 
 	else {
 		alert("De la lista " + numeros + ", " + numeros[2] + " es el mas grande");
-	}
-	
+	}	
 	var maximo = (numeros[0] >= numeros[1] && numeros[0] >= numeros[2])  ? numeros[0]  :
 					(numeros[1] >= numeros[0] && numeros[1] >= numeros[2])  ? numeros[1]  :
-					numeros[2];
+					numeros[2] ;
 	
 	alert("De la lista " + numeros + ", " + maximo + " es el mas grande");
 	
