@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Ejercicio</title>
+	</head>
+	<body></body>
+<script>
+	var numeros = new Array();
+	for (var i = 0; i < 3; i++) {
+		do {
+			numeros[i] = prompt("Introduzca el num " + i);
+			
+		} while (numeros[i] == null || isNaN(numeros[i]) || numeros[i] == "");				
+	}
+	for (var i = 0; i < 3; i++) {
+		numeros[i] = parseInt(numeros[i]);			
+	}
+	if (numeros[0] >= numeros[1] && numeros[0] >= numeros[2]) 
+	{
+		alert("De la lista " + numeros + ", " + numeros[0] + " es el mas grande");
+	} 
+	else if  (numeros[1] >= numeros[0] && numeros[1] >= numeros[2]) 
+	{
+		alert("De la lista " + numeros + ", " + numeros[1] + " es el mas grande");
+	} 
+	else {
+		alert("De la lista " + numeros + ", " + numeros[2] + " es el mas grande");
+	}
+	
+	var maximo = (numeros[0] >= numeros[1] && numeros[0] >= numeros[2])  ? numeros[0]  :
+					(numeros[1] >= numeros[0] && numeros[1] >= numeros[2])  ? numeros[1]  :
+					numeros[2];
+	
+	alert("De la lista " + numeros + ", " + maximo + " es el mas grande");
+	
+	alert(maximo + " tiene signo " + dameSigno(maximo));
+	
+	function dameSigno(numero) {
+		return numero > 0 ? "+" : 
+							numero < 0 ? "-" :
+										 "0";
+	}
+	
+</script>
+</html>
