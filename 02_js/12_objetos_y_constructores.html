@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Calculadora</title>
+	</head>
+	<body>
+		<div id="texto1">texto1</div>
+		<div id="texto2">texto2</div>
+	</body>
+<script>
+	var div = document.getElementById("texto2");
+	
+	var arrayUno = new Array();
+	
+	div.innerHTML = div.innerHTML + arrayUno + "<br>";
+	arrayUno[0]="ELEMENTO 0";
+	arrayUno[1]="ELEMENTO 1";
+	div.innerHTML += arrayUno + "<br>";	
+	arrayUno["propiedad"]="ELEMENTO PROP";	
+	arrayUno.toString = function () {
+		var resultado = "";
+		for (var i = 0; i < this.length; i++) {
+			resultado += ", "+ this[i];
+		}
+		return resultado + ", prop " + arrayUno.propiedad ;
+	}	
+	div.innerHTML += arrayUno + "<br>";
+	
+	
+	
+	
+	
+	
+	var objetoUno = new Object();
+	var objetoDos = new Object();
+	var objetoTres = new Object();
+	
+	objetoUno["propiedad_1"]="ELEMENTO PROP 1";
+	objetoUno.propiedad_2="ELEMENTO PROP 2";
+	
+	objetoUno.agregar = function (clave, valor) {
+		this[clave] = clave + ": "+ valor;
+	}
+	objetoUno.toString2 = function() {
+		var resultado = "";
+		for (propiedad in objetoUno) {
+			resultado += ", \"" + propiedad + "\": "
+				+ "\""+objetoUno[propiedad] + "\"" + "<br>";
+		}
+		return resultado;
+	}
+	objetoUno.agregar("propiedad_3", "ELEMENTO PROP 3");
+	
+	objetoDos.otroAgregar = objetoUno.agregar;
+	objetoDos.toString2 = objetoUno.toString2;
+	objetoDos.otroAgregar("propiedad_1", "PROPIEDAD AGREG 1");
+		
+	objetoTres.miObjeto = objetoUno.propiedad_1;
+	
+	objetoUno.propiedad_1 = "kljkljlñjkklñjl";
+	
+	div.innerHTML += "<br> objetoDos: <br>"
+		+objetoTres.miObjeto + "<br>";
+	
+</script>
+</html>
+

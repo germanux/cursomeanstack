@@ -14,7 +14,7 @@ for (var i = 0; i < numero; i++) {
 	var fecha =  prompt("Fecha nacimiento DD-MM-AAAA:" + i);
 	
 	var nuevoAlmuno = new Object();
-	nuevoAlmuno.nombre = nombre;
+	nuevoAlmuno['nombre'] = nombre;
 	var infoFecha = fecha.split("-");
 	// Forma dos:
 	nuevoAlmuno.fecha = new Date(
@@ -26,8 +26,8 @@ for (var i = 0; i < numero; i++) {
 }	
 document.write("<table>");
 for (var i = 0; i < numero; i++) {
-	document.write("<tr><td>Nombre : " + nuevoAlmuno.nombre 
-		+ "</td><td>fecha: " + nuevoAlmuno.fecha+ "</td></tr>");
+	document.write("<tr><td>Nombre : " + alumnos[i].nombre 
+		+ "</td><td>fecha: " + alumnos[i].fecha+ "</td></tr>");
 }
 document.write("</table>");
 
