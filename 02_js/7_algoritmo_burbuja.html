@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Algoritmo burbuja</title>
+	</head>
+	<body></body>
+<script>
+	var array1= new Array();
+	array1[0]=6; array1[1]=1; array1[2]=4; array1[3]=9; 
+	array1[4]=12; array1[5]=3; array1[6]=8; array1[7]=3; 
+	
+	var array2 = ["asdg", "httt", "tttt", "aaaa", "nnnn", "rrr", "jjjj", "bbbb"];
+	
+	function ordenar(array) {
+		for (var j = 0; j < array.length; j++) {
+			for (var i = 0; i < array.length - j; i++) {
+				if (array[i] > array[i + 1] ) {
+					var aux = array[i];
+					array[i] = array[i + 1];
+					array[i + 1] = aux;
+				}
+			}
+			console.log(array);
+		}
+		return array;
+	}
+	console.log(array1);
+	console.log(ordenar(array1));
+	console.log(array2);
+	console.log(ordenar(array2));
+</script>
+</html>
