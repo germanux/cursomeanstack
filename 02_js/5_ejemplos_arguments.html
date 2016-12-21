@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Mi primera página</title>
+	</head>
+	<body></body>
+<script>
+	function listarArgumentos(arg_1, arg_2) {
+		console.log("Num arg: " 
+				+ 	arguments.length);
+		var resultado = "";
+		for (var i = 0; i < arguments.length; i++) {
+			resultado += ", "+ arguments[i];
+		}
+		// con formato for - in		
+		for (argumento in arguments) {
+			resultado += ", "+ argumento;
+		}
+		if (arguments.length > 0) {
+			switch (arg_1) {
+			case 0: console.log("Valor 0"); 
+				break;
+			case 1: console.log("Valor 1"); 
+				break;
+			case 2: console.log("Valor 2"); 
+				break;
+			case 3: console.log("Valor 3"); 
+				break;				
+			default: console.log("Cualquier otro"); 
+				break;
+			}
+		}
+		return resultado;
+	}
+</script>
+<script>
+	var resul = listarArgumentos () ;
+	console.log( resul );
+	console.log(listarArgumentos (1) );
+	console.log(listarArgumentos (2, 3) );
+	console.log(listarArgumentos (1, 2, 3, 4) );
+</script>
+</html>

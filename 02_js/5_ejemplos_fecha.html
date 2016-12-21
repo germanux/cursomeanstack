@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Mi primera página</title>
+	</head>
+	<body></body>
+<script>
+
+var fecha = new Date();
+fecha.setFullYear(1989);
+console.log("Fecha al crear: " + fecha.getFullYear());
+var otraFecha = fecha;
+var otraFechaClonada = new Date(fecha);
+console.log("Año: " + fecha.getFullYear() );
+
+function cambiarYear(unaFecha) {
+	unaFecha.setFullYear(2011);	
+	console.log("Año en funcion: " + unaFecha.getFullYear() );
+}
+console.log("Año fuera funcion: " + fecha.getFullYear() );
+console.log("Año otraFecha fuera funcion: " 
+	+ otraFecha.getFullYear() );
+console.log("Cambiamos con cambiarYear()");
+cambiarYear(fecha);
+console.log("Año fuera funcion: " + fecha.getFullYear() );
+console.log("Año otraFecha fuera funcion: " 
+	+ otraFecha.getFullYear() );
+console.log("Año otraFechaClonada fuera funcion: " 
+	+ otraFechaClonada.getFullYear() );
+// Resultado: 
+/* Fecha al crear: 2016 5_ejemplos_fecha.html:11:1
+Año: 1989 5_ejemplos_fecha.html:14:1
+Año fuera funcion: 1989 5_ejemplos_fecha.html:20:1
+Año otraFecha fuera funcion: 1989 5_ejemplos_fecha.html:21:1
+Cambiamos con cambiarYear() 5_ejemplos_fecha.html:23:1
+Año en funcion: 2011 5_ejemplos_fecha.html:18:2
+Año fuera funcion: 2011 5_ejemplos_fecha.html:25:1
+Año otraFecha fuera funcion: Tue Dec 20 2011 19:53:36 GMT+0100*/
+</script>
+</html>
