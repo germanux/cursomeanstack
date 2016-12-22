@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Reloj</title>
+	</head>
+	<body >
+		<h2>Nuestro reloj con Java Script</h2>
+		
+		<form name="reloj" onSubmit="0">
+			<table>
+				<tr>
+					<td>Hoy es </td>
+					<td>La hora 1 es </td>
+					<td>La hora 2 es </td>
+				</tr>
+				<tr>
+					<td><input type="text" name="laFecha" size="12" value=""> </td>
+					<td><input type="text" name="laHora" size="12" value=""> </td>
+					<td><input type="text" name="laHora2" size="16" value=""> </td>
+					<td><input type="text" name="laHora3" size="16" value=""> </td>
+				</tr>
+			</table>
+		</form>
+	</body>
+<script src="15_reloj_POO.js"></script>
+<script>
+	var relojUno = new NuestroReloj(document.reloj.laHora);
+	var relojDos = new NuestroReloj(document.reloj.laHora2);
+	var relojTres = new NuestroReloj(document.reloj.laHora3);
+
+	relojUno.comenzarReloj();
+	setTimeout("relojDos.comenzarReloj()",2000);
+	setTimeout("relojTres.comenzarReloj()",4000);
+	// Referenciar al protoipo de un objecto concreto	
+</script>
+</html>
+
