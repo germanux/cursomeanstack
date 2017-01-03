@@ -1,0 +1,23 @@
+﻿<html>
+
+<head>
+    <title>Ejemplo de validación de un formulario con campos tipo teléfono y tipo dni usando expresiones regulares</title>
+    <script type="text/javascript">
+        function validacionPersonalizadaEmail(input) {
+            //Si no es valido
+            if (!input.validity.valid) {
+                //Cambiar el mensaje de error a mostrar
+                input.setCustomValidity(document.getElementById("mensaje").value);
+            }
+        }
+    </script>
+</head>
+<body>
+    <form id="formulario">
+        <input type="text" name="mensaje" id="mensaje" placeholder="Pon un mensaje de error" required="required" />
+        <input type="email" name="email1" id="email1" placeholder="mail@dominio" title="Este campo es tipo Email" oninvalid="validacionPersonalizadaEmail(this)" required="required" />
+        <input type="submit" value="Enviar" />
+    </form>
+</body>
+
+</html>
