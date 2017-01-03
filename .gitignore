@@ -2,3 +2,6 @@ solo_local/
 *.odp
 *.odp#
 curriculum/
+app_curriculum/
+*.mp4
+desktop.ini
