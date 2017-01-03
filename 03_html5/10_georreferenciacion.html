@@ -1,63 +1,49 @@
-<!DOCTYPE html>
-<html>
+﻿<html>
+
 <head>
-<meta charset="ISO-8859-1">
-<title>Mira que me refencio geograficamente!</title>
-<script type="text/javascript">
-	function queMeGeorreferencio(){
-		if(navigator.geolocation){
-			navigator.geolocation.getCurrentPosition(asiTratoYoAlPunto, asiMeEscuerno,{timeout: 6000,maximumAge: 600000,enableHighAccuracy:true});
-		}else{
-			alert("No soporto geolocation, ni a ti tampoco!");
-		}
-	}
-	function cargarMapita(){
-		if(navigator.geolocation){
-			navigator.geolocation.getCurrentPosition(aVerDondeEstoy, asiMeEscuerno);
-		}else{
-			alert("No soporto geolocation, ni a ti tampoco!");
-		}
-	}
-	function aVerDondeEstoy(posicion){
-		var latitud = posicion.coords.latitude;//{coords:{latitude:3.15,longitude:40.14}}
-		var longitud = posicion.coords.longitude;
-		var imageUrl = "http://maps.google.com/maps/api/staticmap?"+
-				"sensor=false&"+
-				"center="+latitud+","+longitud+"&"+
-				"zoom=14&"+
-				"size=800x600&"+
-				"markers=color:red|label:P|"+latitud+","+longitud
-		mapita.innerHTML='<img src="'+imageUrl+'">'	
-	}
-	function asiTratoYoAlPunto(posicion){
-		//posicion = arguments[0];
-		var latitud = posicion.coords.latitude;
-		var longitud = posicion.coords.longitude;
-		alert("LATITUD: "+ latitud + "\nLONGITUD: " + longitud);
-	}
-	function asiMeEscuerno(error){
-		var resultadoError = "Me he estampao! no ha dado ni LAT ni LON ni na de na!\t" + error.message;
-		if(error.code == 0){
-			resultadoError = resultadoError + "\nError desconocido";	
-		}
-		if(error.code == 1){
-			resultadoError = resultadoError + "\nEl usuario no ha compartido su ubicaci�n";	
-		}
-		if(error.code == 2){
-			resultadoError = resultadoError + "\nNo se puede obtener su posicion actual";	
-		}
-		if(error.code == 3){
-			resultadoError = resultadoError + "\nSe ha recibido un timeout recibiendo la posicion";	
-		}
-		alert(resultadoError);
-	}
-</script>
+    <title>Georrefenenciando</title>
+    <script type="text/javascript">
+        function queMeGeorreferencio() {
+            if (navigator.geolocation) {
+                var opciones = {
+                    timeout: 6000,
+                    maximumAge: 600000,
+                    enableHighAccuracy: true
+                }
+                navigator.geolocation.getCurrentPosition(
+                    alRecibirGEO, errorEnGEO, opciones);
+            } else {
+                alert("No soporto la localización");
+            }
+        }
+
+        function alRecibirGEO(posicion) {
+            var latitude = posicion.coords.latitude;
+            var longitude = posicion.coords.longitude;
+            //alert("latitude: " + posicion.coords.latitude +
+            //    ", longitud: " + posicion.coords.longitude +
+            //    ", ALTITUD: " + posicion.coords.altitude);
+            var imagenMapa = "http://maps.google.com/maps/api/staticmap?" +
+                "sensor=false&" +
+                "center=" + latitude + "," + longitude + "&" +
+                "zoom=14&" + "size=600x400&" +
+                "markers=color:red|label:P|" + latitude + "," + longitude;
+            var mapita = document.getElementById("mapita");
+            mapita.innerHTML = "<img src='" + imagenMapa + "'>";
+        }
+
+        function errorEnGEO(error) {
+            alert("Error codigo: " + error.message);
+        }
+    </script>
 </head>
+
 <body>
-<input type="button" value="Mira que me refencio geograficamente!" onclick="queMeGeorreferencio()">
-<input type="button" value="Cargar Mapita" onclick="cargarMapita()">
-<div id="mapita">
-	
-</div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12171.780880736878!2d-3.75302145!3d40.299175250000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1483473025853" width="400" height="400" frameborder="0" style="border:0"
+        allowfullscreen>
+    </iframe>
+    <input type="button" value="Georreferenciar" onclick="queMeGeorreferencio()" />
+    <div id="mapita"></div>
 </body>
+
 </html>
