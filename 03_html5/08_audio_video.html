@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Ejemplo Audio & video</title>
+<script type="text/javascript">
+	function probar(){
+		var videoDePaisano = document.getElementById("paisanoDeFirefox");
+		
+		videoDePaisano.pause();
+		alert("reproduccion parada");
+		alert("Ahora reproducimos y bajo el volumen");
+		videoDePaisano.play();
+		videoDePaisano.volume=0;
+		alert("Ahora reproducimos y subo el volumen a la mitad");
+		videoDePaisano.volume=0.5;
+		alert("Ahora reproducimos y subo el volumen a tope");
+		videoDePaisano.volume=1;
+		alert("Saltar al minuto 2");
+		videoDePaisano.currentTime=120
+		alert("Tiempo de inicio : " + videoDePaisano.seekable.start(0));
+		
+		alert("Tiempo de fin : " + videoDePaisano.seekable.end(0));
+		;
+	}
+</script>
+</head>
+<body>
+	<audio controls><!-- loop autoplay -->
+		<source src="http://www.htmlya.com.ar/html5/simulador/gallo.mp3">
+		<source src="http://www.htmlya.com.ar/html5/simulador/gallo.ogg">
+		<source src="http://www.htmlya.com.ar/html5/simulador/gallo.wav">
+		Su navegador no soporta <code>audio</code>
+	</audio>
+	<input type="button" value="probar" onclick="probar()"/><br/>
+	<video id="paisanoDeFirefox" autoplay controls width="640" heigth="360" >
+		<source src="http://videos.mozilla.org/firefox/3.5/overview/overview.ogv"/>
+	</video>
+	
+</body>
+</html>
