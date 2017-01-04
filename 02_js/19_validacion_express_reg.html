@@ -1,43 +1,32 @@
-<html>
+﻿<html>
 
 <head>
-    <meta charset="utf-8" />
-    <title>
-        19_validacion_express_reg.html
-    </title>
+    <title>Ejemplo de validación de un formulario</title>
+    <script>
+        function ValidaCampos(formulario) {
+            var expresion_regular_telefono = /^\d{9}$/;
+            // 9 cifras numéricas. 
+            var expresion_regular_dni = /^\d{8}[a-zA-Z]$/;
+            // 8 cifras numéricas más un carácter alfabético. 
+            // Usaremos el método "test" de las expresiones regulares: 
+            if (expresion_regular_telefono.test(formulario.telefono.value) == false) {
+                alert('Campo TELEFONO no válido.');
+                return false; // sale de la función y NO envía el formulario 
+            }
+            if (expresion_regular_dni.test(formulario.dni.value) == false) {
+                alert('Campo DNI no válido.');
+                return false; // sale de la función y NO envía el formulario 
+                // return true; // sale de la función y SÍ envía el formulario 
+            }
+    </script>
 </head>
 
 <body>
-    <header>
-        <h1>
-            Validación con expresiones regularexs
-        </h1>
-    </header>
-    <section>
-        <form name="miform" onsubmit="return ValidaCampos(this)">
-            DNI: <input type="text" name="dni" size="9" />
-            <br/> Tlfn: <input type="text" name="telefono" size="9" maxlength="9" />
-            <br/>
-            <input type="submit" value="Enviar" name="enviar" />
-        </form>
-    </section>
+    <p>Campos tipo teléfono y tipo dni usando expresiones regulares y JS</p>
+    <form name="formulario" onSubmit="return ValidaCampos(this)">
+        DNI:<input type="text" name="dni" size="9" maxlength="9"><br> Teléfono: <input type="text" name="telefono" size="9" maxlength="9"><br>
+        <input type="submit" value="Enviar" name="enviar">
+    </form>
 </body>
-<script>
-    function ValidaCampos(miformulario) {
-        var expres_reg_telefono = /^[5-9]\d{8}$/;
-        // 9 digitos
-        var expres_reg_dni = /^\d{8}[a-zA-Z]$/;
-        //var expres_reg_dni= /^\d{8}\w$/;
-        if (expres_reg_telefono.test(miformulario.telefono.value) == false) {
-            alert("Campo de teléfono no válido");
-            return false;
-        } else if (expres_reg_dni.test(miformulario.dni.value) == false) {
-            alert("Campo de dni no válido");
-            return false;
-        } else {
-            return true;
-        }
-    }
-</script>
 
 </html>
