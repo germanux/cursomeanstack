@@ -1,0 +1,9 @@
+Ejercicio 18_figuras.html
+
+1) Similar a calculadora, un objeto Rectangulo, que tenga tres inputs, 2 de entrada (ancho, alto) y uno de resultado, y un único método calcular area que calcule el area del rectangulo que sea llamado desde un botón "AREA".
+
+2) Similar a Rectangulo, un objeto Triangulo cuyo botón calcule el area del triangulo.
+
+3) Que hereden ambos de un objeto Figura.
+
+4) Que compartanel crear un TextArea y ahí que genere el JSon de la Figura
