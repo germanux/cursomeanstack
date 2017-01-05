@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Calculadora</title>
+	</head>
+	<body>
+		<div id='texto'>
+			Rectangulo<br>
+			<div id='padreCalc'></div>
+		</div>
+		<div id='texto'>
+			Triangulo<br>
+			<div id='padreCalc2'></div>
+		</div>
+	</body>
+<script src="18_CreadorDOM.js"></script>
+<script src="18_figuras.js"></script>
+<script>	
+	var padreCalc = document.getElementById("padreCalc");
+	var rectangulo = new Rectangulo(padreCalc);
+	
+	var padreCalc2 = document.getElementById("padreCalc2");
+	var triguangulo = new Triangulo(padreCalc2);
+</script>
+</html>
+

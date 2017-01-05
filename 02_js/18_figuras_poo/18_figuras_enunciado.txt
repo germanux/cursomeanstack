@@ -1,0 +1,64 @@
+**********************************************
+*    Ejercicios programación avanzada JS     *
+**********************************************
+
+		PROGRAMACIÓN ORIENTADA A OBJETOS EN JAVASCRIPT
+			18_figuras_poo
+
+1) Similar a calculadora, un objeto Rectangulo, que tenga tres inputs, 2 de entrada (ancho, alto) y uno de resultado, y un único método calcular area que calcule el area del rectangulo que sea llamado desde un botón "AREA".
+2) Similar a Rectangulo, un objeto Triangulo cuyo botón calcule el area del triangulo.
+3) Que hereden ambos de un objeto Figura.
+4) 	Práctica:  Otra Figura para el área de la Elipse
+	Ejercicio: Figura HiperHuevo: area = ancho * alto * 10
+6)  Práctica:  Función intermedia para heredar y correcciones
+	Ejercicio: HiperHuevo usando función heredar
+7)  Práctica:  Haciendo Heredar un método "estático" de figura
+	Ejercicio: HiperHuevo usando método heredar
+
+		
+		FUNCIONES EN JAVASCRIPT, nueva carpeta:
+			19_figuras_callbacks
+			
+ 8)  Práctica:  Añadiendo una funcion callback que se llama al crearse la figura
+	Ejercicio: HiperHuevo con callback
+ 9)  Práctica:  Funcion callback con parámetros
+	Ejercicio: HiperHuevo con callback con parámetros
+10)  Práctica:  Complicando las llamadas callback, pasando varias. Callback cuando se calcule el área
+	Ejercicio: HiperHuevo con otra callback
+11)  Práctica:  La llamada de  la callback al calcularse se define en el construtor Figura.Heredar()
+	Ejercicio: Lo mismo con HiperHuevo
+	
+	
+		BUENAS/MALAS PRÁCTICAS DE PROGRAMACIÓN
+			20_figuras_guays
+			
+12)  Práctica:  Reestructurando: separando en ficheros
+13)  Práctica:  El anterior no funcionaba poooor el orden de carga de los ficheros
+	Ejercicio: El HTML no debe tener nada de JS
+14)  Práctica:  Cambiando la interfaz en V2...hay que cambiarlo todo
+	Ejercicio: Otra para el HiperHuevo
+15)  Práctica:  Añadiendo cálculo de perímetros
+	Ejercicio: Añadir cálculo de perímetros en HiperHuevo
+	
+	
+		PATRÓN MVC CON JAVASCRIPT
+			21_figuras_en_mvc
+			
+16)  Práctica:  Desacoplando vista de la lógica solo en figuras (no en v2).
+	Ejercicio: Desacoplar vista de la lógica solo en HiperHuevo V1.
+17)  Práctica:  Antes de cambiar la vista en V2, que es un rollo, mejor implementamos el MVC en nuestras clases.
+	Ejercicio: Usar MVC Figura con HiperHuevo
+18)  Práctica:  Tunear MVC: Desacoplando funciones y asignandolas una sola vez en prototype
+	Ejercicio: Lo mismo en HiperHuevo
+19)  Práctica:  Implementando vista V2. lo demás, sirve completamente
+	Ejercicio: Vista V2 con HiperHuevo
+	
+	
+		MÓDULARIZACIÓN Y PATRON FACTORIA EN JAVASCRIPT
+			22_figuras_modulo_factoria
+			
+20)  Práctica:  Tuneando aún más: juntando modelos de figuras en un módulo Modelo
+	Ejercicio:  Nuestro HiperHuevo en el módulo
+21)  Práctica:  La guinda del pastel: Implementando patrón Factoría
+	Ejercicio: Añadir a la Factoría la creación de una instancia HiperHuevo
+	

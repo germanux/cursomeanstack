@@ -1,26 +1,27 @@
 Opinión sincera de estos 11 días (2 semanas) de clase de HTML5 y JavaScript:
 - ¿Conocías lo que hemos visto de HTML5 y JS? (En porcentaje un 100% todo, 0% nada):
-	- HTML 4:		%
-	- JavaScript:	%
-	- HTML 5:		%
-	- EcmaScript6:	%
+	- HTML 4:				%
+	- JavaScript básico:	%
+	- HTML 5:				%
+	- JavaScript avanzado:	%
 - ¿Qué has aprendido?
 	- De HTML:
 	- JavaScript:
+- ¿Qué partes que no te han quedado claras?
 - ¿Qué te gustaría haber aprendido?
 	- De HTML:
-	- JavaScript:
-- ¿Qué partes que no te han quedado claras?
-- ¿Qué conocimientos tienes de...?
+	- JavaScript: ¿SQLite? ¿Otros patrones?
+- ¿Qué conocimientos tienes del teario que falta...?
 	- CSS3
 	- JQuery
 	- Bootstrap
-	- TypeScript
+	- TypeSc
 	- Angular 1
 	- Angular 2
 	- NodeJS
 	- Express
 	- MongooseJS
+- Del temario que falta, ¿qué te interesa más?
 - ¿Te gustan o te han resultado interesantes los contenidos extras vistos?:
 	- Noticias (SI / NO)
 	- Personajes
@@ -31,6 +32,7 @@ Opinión sincera de estos 11 días (2 semanas) de clase de HTML5 y JavaScript:
 	- Personajes
 	- Sobre Ingeniería y Diseño de SW
 	- Tecnologías extra
+		(*) Se tiene la inteción de ver, muy por encima (media hora/una hora por cada): PhoneGap, jQueryMObile, Vaadin, Foundation.
 	- Otros
 - Puntúa (de 0 a 10) o comenta (críticas, alabanzas, sugerencias...) acerca de:
 	- Ritmo de la clase.
