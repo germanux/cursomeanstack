@@ -5,13 +5,17 @@
 		<title>Calculadora</title>
 	</head>
 	<body>
-		<div id='texto'>
+		<div id='texto1'>
 			Rectangulo<br>
 			<div id='padreCalc'></div>
 		</div>
-		<div id='texto'>
+		<div id='texto2'>
 			Triangulo<br>
 			<div id='padreCalc2'></div>
+		</div>
+		<div id='texto3'>
+			Elipse<br>
+			<div id='padreCalc3'></div>
 		</div>
 	</body>
 <script src="18_CreadorDOM.js"></script>
@@ -22,6 +26,9 @@
 	
 	var padreCalc2 = document.getElementById("padreCalc2");
 	var triguangulo = new Triangulo(padreCalc2);
+	
+	var padreCalc3 = document.getElementById("padreCalc2");
+	var triguangulo = new Elipse(padreCalc2);
 </script>
 </html>
 

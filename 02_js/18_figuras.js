@@ -20,7 +20,6 @@ Rectangulo.prototype.calculaArea = function() {
 	this.resultado.value =   parseInt(this.alto.value) 
 						   * parseInt(this.ancho.value);
 }
-
 var Triangulo = function (padreDom) {
 	Figura.call(this, padreDom);
 }
@@ -29,4 +28,14 @@ Triangulo.prototype = Figura;
 Triangulo.prototype.calculaArea = function() {
 	this.resultado.value =   parseInt(this.alto.value) 
 						   * parseInt(this.ancho.value) / 2;
+}
+var Elipse = function (padreDom) {
+	Figura.call(this, padreDom);
+}
+Elipse.prototype = Figura;
+
+Elipse.prototype.calculaArea = function() {
+	this.resultado.value =   (parseInt(this.alto.value) / 2)
+						   * (parseInt(this.ancho.value) / 2)
+						   * Math.PI;
 }
