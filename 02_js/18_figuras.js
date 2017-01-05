@@ -8,7 +8,6 @@ var Figura = function(padreDom, nombre, callBackAlCrearse, callBKAlCalcularse) {
             this.alto = CreadorDOM.addInput(this.formCalc, "alto", "alto");
             // La caja con el resultado
             this.resultado = CreadorDOM.addInput(this.formCalc, "Área", "resultado");
-            // El botón de calcular
             CreadorDOM.addButton(this, " Calcular Área " + nombre, this.calculaArea);
             this.callBKAlCalcularse = callBKAlCalcularse;
             callBackAlCrearse("Todo correcto", "Que sí coño, que todo correcto!");
@@ -24,21 +23,21 @@ Figura.Heredar = function(funCalculaArea, nombre, callBackAlCrearse, callBKAlCal
         Figura.call(this, padreDom, nombreFun, callBackAlCrearseFuncion, callBKAlCalcularseFuncion);
     }
     functionConstructora.prototype = new Figura;
-    functionConstructora.prototype.calculaArea = funCalculaArea;
+    functionConstructora.prototype.calculaArea = function() {
+        funCalculaArea.bind(functionConstructora);
+        callBKAlCalcularse("BUFF, menos mal, se ha calculado...");
+    };
     return functionConstructora;
 }
 
 function calcularAreaRectangulo() {
     this.resultado.value = parseInt(this.alto.value) *
         parseInt(this.ancho.value);
-    this.callBKAlCalcularse("calcularAreaRectangulo!");
 };
 
 function calcularAreaTriangulo() {
     this.resultado.value = parseInt(this.alto.value) *
         parseInt(this.ancho.value) / 2;
-    this.callBKAlCalcularse("calcularAreaTriangulo PRIMERA VEZ!");
-    this.callBKAlCalcularse("calcularAreaTriangulo Y OTRA!");
 }
 
 function calculaAreaElipse() {
