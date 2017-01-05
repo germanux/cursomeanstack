@@ -1,41 +1,42 @@
-var Figura = function (padreDom) {
-	
-	// Añadimos el FORM al padreDom
-	this.formCalc = document.createElement("form");
-	padreDom.appendChild(this.formCalc);
-	// Y los botones
-	this.alto = CreadorDOM.addInput(this.formCalc, "alto", "alto");
-	this.ancho = CreadorDOM.addInput(this.formCalc, "ancho", "ancho");
-	this.resultado = CreadorDOM.addInput(this.formCalc, "Resultado", "resultado");
-	// El botón de calcular
-	CreadorDOM.addButton(this, " Calcular Área " , this.calculaArea);
-	// Y la caja con el resultado
+var Figura = function (padreDom, nombre) {	
+	if (padreDom) {
+		// Añadimos el FORM al padreDom
+		this.formCalc = document.createElement("form");
+		padreDom.appendChild(this.formCalc);
+		// Las cajas de texto de entrada
+		this.alto = CreadorDOM.addInput(this.formCalc, "alto", "alto");
+		this.ancho = CreadorDOM.addInput(this.formCalc, "ancho", "ancho");
+		// La caja con el resultado
+		this.resultado = CreadorDOM.addInput(this.formCalc, "Área", "resultado");
+		// El botón de calcular
+		CreadorDOM.addButton(this, " Calcular Área " + nombre, this.calculaArea);		
+	}
 }
-var Rectangulo = function (padreDom) {
-	Figura.call(this, padreDom);
+// Función para heredar de figura
+function HeredarFigura(funCalculaArea, nombre) {
+	var nombreFun = nombre;
+	var functionConstructora = function (padreDom) {
+		Figura.call(this, padreDom, nombreFun);
+	}
+	functionConstructora.prototype = new Figura;
+	functionConstructora.prototype.calculaArea = funCalculaArea;
+	return functionConstructora;
 }
-Rectangulo.prototype = Figura;
-
-Rectangulo.prototype.calculaArea = function() {
+function calcularAreaRectangulo () {
 	this.resultado.value =   parseInt(this.alto.value) 
 						   * parseInt(this.ancho.value);
-}
-var Triangulo = function (padreDom) {
-	Figura.call(this, padreDom);
-}
-Triangulo.prototype = Figura;
+};
+var Rectangulo = HeredarFigura(calcularAreaRectangulo, "Rectangulo");
 
-Triangulo.prototype.calculaArea = function() {
+function calcularAreaTriangulo() {
 	this.resultado.value =   parseInt(this.alto.value) 
 						   * parseInt(this.ancho.value) / 2;
 }
-var Elipse = function (padreDom) {
-	Figura.call(this, padreDom);
-}
-Elipse.prototype = Figura;
+var Triangulo = HeredarFigura(calcularAreaTriangulo, "Triangulo");
 
-Elipse.prototype.calculaArea = function() {
+function calculaAreaElipse() {
 	this.resultado.value =   (parseInt(this.alto.value) / 2)
 						   * (parseInt(this.ancho.value) / 2)
 						   * Math.PI;
 }
+var Elipse = HeredarFigura(calculaAreaElipse, "Elipse");
