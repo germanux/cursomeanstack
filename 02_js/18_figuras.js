@@ -10,10 +10,10 @@ var Figura = function (padreDom, nombre) {
 		this.resultado = CreadorDOM.addInput(this.formCalc, "Área", "resultado");
 		// El botón de calcular
 		CreadorDOM.addButton(this, " Calcular Área " + nombre, this.calculaArea);		
-	}
+	}	
 }
 // Función para heredar de figura
-function HeredarFigura(funCalculaArea, nombre) {
+Figura.Heredar = function (funCalculaArea, nombre) {
 	var nombreFun = nombre;
 	var functionConstructora = function (padreDom) {
 		Figura.call(this, padreDom, nombreFun);
@@ -26,17 +26,17 @@ function calcularAreaRectangulo () {
 	this.resultado.value =   parseInt(this.alto.value) 
 						   * parseInt(this.ancho.value);
 };
-var Rectangulo = HeredarFigura(calcularAreaRectangulo, "Rectangulo");
+var Rectangulo = Figura.Heredar(calcularAreaRectangulo, "Rectangulo");
 
 function calcularAreaTriangulo() {
 	this.resultado.value =   parseInt(this.alto.value) 
 						   * parseInt(this.ancho.value) / 2;
 }
-var Triangulo = HeredarFigura(calcularAreaTriangulo, "Triangulo");
+var Triangulo = Figura.Heredar(calcularAreaTriangulo, "Triangulo");
 
 function calculaAreaElipse() {
 	this.resultado.value =   (parseInt(this.alto.value) / 2)
 						   * (parseInt(this.ancho.value) / 2)
 						   * Math.PI;
 }
-var Elipse = HeredarFigura(calculaAreaElipse, "Elipse");
+var Elipse = Figura.Heredar(calculaAreaElipse, "Elipse");
