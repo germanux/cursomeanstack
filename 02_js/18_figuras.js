@@ -1,4 +1,4 @@
-var Figura = function(padreDom, nombre, callBackAlCrearse) {
+var Figura = function(padreDom, nombre, callBackAlCrearse, callBKAlCalcularse) {
         if (padreDom) {
             // Añadimos el FORM al padreDom
             this.formCalc = document.createElement("form");
@@ -10,16 +10,18 @@ var Figura = function(padreDom, nombre, callBackAlCrearse) {
             this.resultado = CreadorDOM.addInput(this.formCalc, "Área", "resultado");
             // El botón de calcular
             CreadorDOM.addButton(this, " Calcular Área " + nombre, this.calculaArea);
-
+            this.callBKAlCalcularse = callBKAlCalcularse;
             callBackAlCrearse("Todo correcto", "Que sí coño, que todo correcto!");
         }
     }
     // Función para heredar de figura
-Figura.Heredar = function(funCalculaArea, nombre, callBackAlCrearse) {
+Figura.Heredar = function(funCalculaArea, nombre, callBackAlCrearse, callBKAlCalcularse) {
     var nombreFun = nombre;
     var callBackAlCrearseFuncion = callBackAlCrearse;
+    var callBKAlCalcularseFuncion = callBKAlCalcularse;
+
     var functionConstructora = function(padreDom) {
-        Figura.call(this, padreDom, nombreFun, callBackAlCrearseFuncion);
+        Figura.call(this, padreDom, nombreFun, callBackAlCrearseFuncion, callBKAlCalcularseFuncion);
     }
     functionConstructora.prototype = new Figura;
     functionConstructora.prototype.calculaArea = funCalculaArea;
@@ -29,11 +31,14 @@ Figura.Heredar = function(funCalculaArea, nombre, callBackAlCrearse) {
 function calcularAreaRectangulo() {
     this.resultado.value = parseInt(this.alto.value) *
         parseInt(this.ancho.value);
+    this.callBKAlCalcularse("calcularAreaRectangulo!");
 };
 
 function calcularAreaTriangulo() {
     this.resultado.value = parseInt(this.alto.value) *
         parseInt(this.ancho.value) / 2;
+    this.callBKAlCalcularse("calcularAreaTriangulo PRIMERA VEZ!");
+    this.callBKAlCalcularse("calcularAreaTriangulo Y OTRA!");
 }
 
 function calculaAreaElipse() {
@@ -42,8 +47,12 @@ function calculaAreaElipse() {
         Math.PI;
 }
 
-var Rectangulo = Figura.Heredar(calcularAreaRectangulo, "Rectangulo", MiFuncionCallBackGenerica);
-var Triangulo = Figura.Heredar(calcularAreaTriangulo, "Triangulo", MiFuncionCallBackGenerica);
+function callBKAlCalcularseRectangulo(mensaje) {
+    alert("AIBA! Se ha calculado el Rectangulo con " + mensaje);
+}
+var Rectangulo = Figura.Heredar(calcularAreaRectangulo, "Rectangulo", MiFuncionCallBackGenerica, callBKAlCalcularseRectangulo);
+var Triangulo = Figura.Heredar(calcularAreaTriangulo, "Triangulo", MiFuncionCallBackGenerica,
+    function(mensaje) { alert("AIIIIBA! Pues también el Triangulo con " + mensaje); });
 var Elipse = Figura.Heredar(calculaAreaElipse, "Elipse", MiFuncionCallBackElipse);
 
 function MiFuncionCallBackGenerica(mensaje_1, mensaje_2) {
