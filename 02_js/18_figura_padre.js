@@ -9,8 +9,14 @@ var Figura = function(padreDom, nombre) {
             // La caja con el resultado
             this.resultado = CreadorDOM.addInput(this.formCalc, "Área", "resultado");
             this.perimetro = CreadorDOM.addInput(this.formCalc, "Perimetro", "perimetro");
-            CreadorDOM.addButton(this, " Calcular Área " + nombre, this.calculaArea);
-            CreadorDOM.addButton(this, " Perímetro     " + nombre, this.calculaPerimetro);
+            this.pulsarCalcularArea = function() {
+                this.resultado.value = this.calculaArea(parseInt(this.alto.value), parseInt(this.ancho.value));
+            }
+            this.pulsarCalcularPerimetro = function() {
+                this.perimetro.value = this.calculaPerimetro(parseInt(this.alto.value), parseInt(this.ancho.value));
+            }
+            CreadorDOM.addButton(this, " Calcular Área " + nombre, this.pulsarCalcularArea);
+            CreadorDOM.addButton(this, " Perímetro     " + nombre, this.pulsarCalcularPerimetro);
         }
     }
     // Función para heredar de figura
