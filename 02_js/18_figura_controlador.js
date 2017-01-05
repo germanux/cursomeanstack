@@ -1,13 +1,13 @@
 var FiguraControlador = function(vistaFigura, modeloCalculador) {
-    var vista = vistaFigura;
-    var modelo = modeloCalculador;
-
-    vistaFigura.calculaArea = function(ancho, alto) {
-        var areaCalculada = modelo.calcularDeVerdadArea(ancho, alto);
-        vista.mostrarArea(areaCalculada);
-    }
-    vistaFigura.calculaPerimetro = function(ancho, alto) {
-        var perimetroCalculado = modelo.calcularDeVerdadPerimetro(ancho, alto);
-        vista.mostrarPerimetro(perimetroCalculado);
-    }
+    vistaFigura.controlador = this;
+    this.vista = vistaFigura;
+    this.modelo = modeloCalculador;
+}
+FiguraControlador.prototype.calculaArea = function(ancho, alto) {
+    var areaCalculada = this.modelo.calcularDeVerdadArea(ancho, alto);
+    this.vista.mostrarArea(areaCalculada);
+}
+FiguraControlador.prototype.calculaPerimetro = function(ancho, alto) {
+    var perimetroCalculado = this.modelo.calcularDeVerdadPerimetro(ancho, alto);
+    this.vista.mostrarPerimetro(perimetroCalculado);
 }
