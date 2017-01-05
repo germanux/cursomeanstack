@@ -27,8 +27,8 @@ FiguraVistaV2.prototype.pulsarCalcularArea = FiguraVista.prototype.pulsarCalcula
 FiguraVistaV2.prototype.pulsarCalcularPerimetro = FiguraVista.prototype.pulsarCalcularPerimetro;
 
 FiguraVistaV2.prototype.mostrarArea = function(area) {
-    this.resultado.innerHTML = area;
+    this.resultado.innerHTML = "El área es " + area;
 }
 FiguraVistaV2.prototype.mostrarPerimetro = function(perimetro) {
-    this.perimetro.innerHTML = perimetro;
+    this.perimetro.innerHTML = "El perimetro es " + perimetro;
 }

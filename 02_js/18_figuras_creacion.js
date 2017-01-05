@@ -6,6 +6,6 @@ var vistaRectangulo = new FiguraVistaV2(padreCalcRectangulo, "Rectangulo");
 var vistaTriangulo = new FiguraVistaV2(padreCalcTriangulo, "Triangulo");
 var vistaElipse = new FiguraVistaV2(padreCalcElipse, "Elipse");
 
-var controlRectangulo = new FiguraControlador(vistaRectangulo, modeloRectangulo);
-var controlTriangulo = new FiguraControlador(vistaTriangulo, modeloTrianguloEquilatero);
-var controlElipse = new FiguraControlador(vistaElipse, modeloElipse);
+var controlRectangulo = new FiguraControlador(vistaRectangulo, Modelo.Rectangulo);
+var controlTriangulo = new FiguraControlador(vistaTriangulo, Modelo.TrianguloEquilatero);
+var controlElipse = new FiguraControlador(vistaElipse, Modelo.Elipse);
