@@ -4,8 +4,8 @@ var Figura = function(padreDom, nombre) {
             this.formCalc = document.createElement("form");
             padreDom.appendChild(this.formCalc);
             // Las cajas de texto de entrada
-            this.ancho = CreadorDOM.addInput(this.formCalc, "ancho", "ancho");
-            this.alto = CreadorDOM.addInput(this.formCalc, "alto", "alto");
+            this.ancho = CreadorDOM.addInput(this.formCalc, "Ancho", "ancho");
+            this.alto = CreadorDOM.addInput(this.formCalc, "Alto", "alto");
             // La caja con el resultado
             this.resultado = CreadorDOM.addInput(this.formCalc, "Área", "resultado");
             CreadorDOM.addButton(this, " Calcular Área " + nombre, this.calculaArea);
