@@ -8,11 +8,13 @@ var Figura = function(padreDom, nombre) {
             this.alto = CreadorDOM.addInput(this.formCalc, "Alto", "alto");
             // La caja con el resultado
             this.resultado = CreadorDOM.addInput(this.formCalc, "Área", "resultado");
+            this.perimetro = CreadorDOM.addInput(this.formCalc, "Perimetro", "perimetro");
             CreadorDOM.addButton(this, " Calcular Área " + nombre, this.calculaArea);
+            CreadorDOM.addButton(this, " Perímetro     " + nombre, this.calculaPerimetro);
         }
     }
     // Función para heredar de figura
-Figura.Heredar = function(funCalculaArea, nombre) {
+Figura.Heredar = function(funCalculaArea, funCalculaPerimetro, nombre) {
     var nombreFun = nombre;
 
     var functionConstructora = function(padreDom) {
@@ -20,5 +22,6 @@ Figura.Heredar = function(funCalculaArea, nombre) {
     }
     functionConstructora.prototype = new Figura;
     functionConstructora.prototype.calculaArea = funCalculaArea;
+    functionConstructora.prototype.calculaPerimetro = funCalculaPerimetro;
     return functionConstructora;
 }
