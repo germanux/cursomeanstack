@@ -10,7 +10,8 @@ var Figura = function(padreDom, nombre, callBackAlCrearse) {
             this.resultado = CreadorDOM.addInput(this.formCalc, "Área", "resultado");
             // El botón de calcular
             CreadorDOM.addButton(this, " Calcular Área " + nombre, this.calculaArea);
-            callBackAlCrearse();
+
+            callBackAlCrearse("Todo correcto", "Que sí coño, que todo correcto!");
         }
     }
     // Función para heredar de figura
@@ -43,8 +44,12 @@ function calculaAreaElipse() {
 
 var Rectangulo = Figura.Heredar(calcularAreaRectangulo, "Rectangulo", MiFuncionCallBackGenerica);
 var Triangulo = Figura.Heredar(calcularAreaTriangulo, "Triangulo", MiFuncionCallBackGenerica);
-var Elipse = Figura.Heredar(calculaAreaElipse, "Elipse", MiFuncionCallBackGenerica);
+var Elipse = Figura.Heredar(calculaAreaElipse, "Elipse", MiFuncionCallBackElipse);
 
-function MiFuncionCallBackGenerica() {
-    alert("Yeeeeeepaaaaah, se ha creado!!");
+function MiFuncionCallBackGenerica(mensaje_1, mensaje_2) {
+    alert("Yeeeeeepaaaaah, se ha creado!! \n" + mensaje_1 + "\n" + mensaje_2);
+}
+
+function MiFuncionCallBackElipse(mensaje_1, mensaje_2) {
+    alert("Mi puta elipse, con perdón, se ha creado!! \n" + mensaje_1 + "\n" + mensaje_2);
 }
