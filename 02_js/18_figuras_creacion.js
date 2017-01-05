@@ -2,10 +2,16 @@ var padreCalcRectangulo = document.getElementById("padre-Calc-Rectangulo");
 var padreCalcTriangulo = document.getElementById("padre-Calc-Triangulo");
 var padreCalcElipse = document.getElementById("padre-Calc-Elipse");
 
-var vistaRectangulo = new FiguraVistaV2(padreCalcRectangulo, "Rectangulo");
-var vistaTriangulo = new FiguraVistaV2(padreCalcTriangulo, "Triangulo");
-var vistaElipse = new FiguraVistaV2(padreCalcElipse, "Elipse");
+var nuevaFactoria = new FactoriaFiguras();
 
-var controlRectangulo = new FiguraControlador(vistaRectangulo, Modelo.Rectangulo);
-var controlTriangulo = new FiguraControlador(vistaTriangulo, Modelo.TrianguloEquilatero);
-var controlElipse = new FiguraControlador(vistaElipse, Modelo.Elipse);
+var opTrianguloV2 = { padreDOM: padreCalcTriangulo, tipoVista: "v2", tipoFigura: "triangulo" };
+var opElipseNormal = { padreDOM: padreCalcTriangulo, tipoFigura: "elipse" };
+var opElipseV2 = { padreDOM: padreCalcTriangulo, tipoVista: "v2", tipoFigura: "elipse" };
+
+nuevaFactoria.crearControlFigura({ padreDOM: padreCalcRectangulo }); // Controlador Rectangulo con vista normal
+nuevaFactoria.crearControlFigura({ padreDOM: padreCalcRectangulo, tipoVista: "v2" }); // Controlador Rectangulo con vista normal
+nuevaFactoria.crearControlFigura({ padreDOM: padreCalcTriangulo, tipoFigura: "triangulo" }); // Controlador Rectangulo con vista normal
+nuevaFactoria.crearControlFigura(opElipseNormal); // Controlador Rectangulo con vista normal
+nuevaFactoria.crearControlFigura(opElipseNormal); // Controlador Rectangulo con vista normal
+nuevaFactoria.crearControlFigura(opElipseV2); // Controlador Rectangulo con vista normal
+// Nuevo Rectangulo:
