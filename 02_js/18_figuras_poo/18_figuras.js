@@ -9,13 +9,27 @@ calculaAreaTriangulo = function() {
     this.metodoCompartido("OOOOOH!");
 }
 calculaAreaElipse = function() {
-        this.resultado.value = (parseInt(this.alto.value) / 2) *
-            (parseInt(this.ancho.value) / 2) * Math.PI;
-        this.metodoCompartido("OOOOOH!");
-    }
-    // Rectangulo
-var Rectangulo = Figurar.Heredar(calculaAreaRectangulo, "Rectangulo");
-// Triangulo
-var Triangulo = Figurar.HeredarFigurar(calculaAreaTriangulo, "Triangulo");
+    this.resultado.value = (parseInt(this.alto.value) / 2) *
+        (parseInt(this.ancho.value) / 2) * Math.PI;
+    this.metodoCompartido("OOOOOH!");
+}
 
-var Elipse = Figurar.HeredarFigurar(calculaAreaElipse, "Elipse");
+function callbackGenerica(mensaje1, mensaje2) {
+    alert("Ya estáaaaa!! \n" + mensaje1 + " - " + mensaje2);
+}
+
+function callbackErrorRe(mensaje1, mensaje2) {
+    alert("¡¡callbackError Rectangulo!! \n" + mensaje1 + " - " + mensaje2);
+    this.kjkj = ""
+}
+
+function callbackErrorTri(mensaje1, mensaje2) {
+    alert("¡¡callbackError Triangulo!! \n" + mensaje1 + " - " + mensaje2);
+    this.kjkj = ""
+}
+// Rectangulo
+var Rectangulo = Figura.Heredar(calculaAreaRectangulo, "Rectangulo", callbackGenerica, callbackErrorRe);
+// Triangulo
+var Triangulo = Figura.Heredar(calculaAreaTriangulo, "Triangulo", callbackGenerica, callbackErrorTri);
+// Elipse
+var Elipse = Figura.Heredar(calculaAreaElipse, "Elipse", callbackGenerica);
