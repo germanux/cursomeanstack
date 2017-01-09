@@ -11,3 +11,7 @@ FiguraControlador.prototype.calculaPerimetro = function(ancho, alto) {
     var perimetroCalculado = this.modelo.calcularDeVerdadPerimetro(ancho, alto);
     this.vista.mostrarPerimetro(perimetroCalculado);
 }
+FiguraControlador.prototype.calculaVolumen = function(ancho, alto, profundidad) {
+    var volumenCalculado = this.modelo.calcularDeVerdadVolumen(ancho, alto, profundidad);
+    this.vista.mostrarVolumen(volumenCalculado);
+}
