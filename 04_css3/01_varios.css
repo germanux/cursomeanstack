@@ -1,0 +1,44 @@
+body {
+	background-color: lightblue;
+}
+
+header {
+	background-color: red;
+	text-align: center;
+}
+
+h1 {
+	background-color: #FFFF88;	
+}
+nav {
+	background-color: lemonchiffon;
+	float: left;
+	overflow: auto;
+	width: 20%;
+	height: 160px;
+	overflow: hidden;
+}
+aside {
+	background-color: aquamarine;
+	float: right;
+	width: 20%;
+	height:140px;
+	padding-left: 20px;
+	padding-top: 10px;
+}
+section {
+	background-color: lavenderblush;
+	margin-left: 21%;
+	width: 54%;
+}
+section header, section article, section footer {
+	background-color: aquamarine;
+	margin-right: 20px;
+}
+#pageFooter {
+	background-color: coral;
+	margin-top: 20px;
+}
+#articleFooter {
+	margin-top: 15px;
+}
