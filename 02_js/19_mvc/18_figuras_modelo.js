@@ -9,19 +9,19 @@ var Modelo = {
         perimetro: 0,
         volumen: 0,
         escuchadores: [],
-        calcularDeVerdadArea: function(ancho, alto) {
+        calcularDeVerdadArea: function(ancho, alto, noNotificar) {
             var areaNueva = ancho * alto;
-            Modelo.notificarCambio(this.escuchadores, "rectangulo", "area", this.area, areaNueva);
+            if (!noNotificar) {
+                Modelo.notificarCambio(this.escuchadores, "rectangulo", "area", this.area, areaNueva);
+            }
             this.area = areaNueva;
+            return this.area;
         },
         calcularDeVerdadPerimetro: function(ancho, alto) {
 
             var perimetroNuevo = alto * 2 + ancho * 2;
             Modelo.notificarCambio(this.escuchadores, "rectangulo", "perimetro", this.perimetro, perimetroNuevo);
             this.perimetro = perimetroNuevo;
-        },
-        calcularDeVerdadVolumen: function(ancho, alto, profundidad) {
-            return this.calcularDeVerdadArea(ancho, alto) * profundidad;
         },
         registrar: function(controlador) {
             this.escuchadores.push(controlador);
@@ -34,9 +34,6 @@ var Modelo = {
         },
         calcularDeVerdadPerimetro: function(ancho, alto) {
             return Math.PI * 2 * Math.sqrt((alto * alto + ancho * ancho) / 2);
-        },
-        calcularDeVerdadVolumen: function(ancho, alto, profundidad) {
-            return this.calcularDeVerdadArea(ancho, alto) * profundidad;
         }
     },
     calcularDeVerdadAreaTriangulo: function(ancho, alto) {
@@ -46,19 +43,13 @@ var Modelo = {
         calcularDeVerdadArea: function(ancho, alto) {
             return Modelo.calcularDeVerdadAreaTriangulo(ancho, alto);
         },
-        calcularDeVerdadPerimetro: function(ancho, alto) { return alto * 3; },
-        calcularDeVerdadVolumen: function(ancho, alto, profundidad) {
-            return this.calcularDeVerdadArea(ancho, alto) * profundidad;
-        }
+        calcularDeVerdadPerimetro: function(ancho, alto) { return alto * 3; }
     },
     TrianguloIsosceles: {
         calcularDeVerdadArea: function(ancho, alto) {
             return Modelo.calcularDeVerdadAreaTriangulo(ancho, alto);
         },
-        calcularDeVerdadPerimetro: function(ancho, alto) { return alto * 2 + ancho; },
-        calcularDeVerdadVolumen: function(ancho, alto, profundidad) {
-            return this.calcularDeVerdadArea(ancho, alto) * profundidad;
-        }
+        calcularDeVerdadPerimetro: function(ancho, alto) { return alto * 2 + ancho; }
     },
     Huevo: {
         calcularDeVerdadArea: function(ancho, alto) {
@@ -66,9 +57,6 @@ var Modelo = {
         },
         calcularDeVerdadPerimetro: function(ancho, alto) {
             return Math.PI * 2 * Math.sqrt((alto * alto + ancho * ancho) / 2) * 100;
-        },
-        calcularDeVerdadVolumen: function(ancho, alto, profundidad) {
-            return this.calcularDeVerdadArea(ancho, alto) * profundidad * 100;
         }
-    },
+    }
 };

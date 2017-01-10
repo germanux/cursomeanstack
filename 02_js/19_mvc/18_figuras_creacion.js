@@ -1,10 +1,13 @@
-var padreCalcRectangulo = document.getElementById("padre-Calc-Rectangulo");
-var padreCalcTriangulo = document.getElementById("padre-Calc-Triangulo");
-var padreCalcElipse = document.getElementById("padre-Calc-Elipse");
-var padreCalcHuevo = document.getElementById("padre-Calc-Huevo");
+var miFactoria = new FactoriaFiguras();
 
-var vistaRectangulo = new FiguraVista(padreCalcRectangulo, "Rectangulo");
-var vistaRectangulo2 = new FiguraVistaV2(padreCalcRectangulo, "Rectangulo");
+var controlRectangulo3 = miFactoria.crearFigura({
+    idPadreDom: "padre-Calc-Rectangulo",
+    tipoVista: "v1",
+    tipoFigura: "rectangulo"
+});
 
-var controlRectangulo = new FiguraControlador(vistaRectangulo, Modelo.Rectangulo);
-var controlRectangulo2 = new FiguraControlador(vistaRectangulo2, Modelo.Rectangulo);
+var controlElipse4 = miFactoria.crearFigura({
+    idPadreDom: "padre-Calc-Elipse",
+    tipoVista: "v2",
+    tipoFigura: "rectangulo"
+});
