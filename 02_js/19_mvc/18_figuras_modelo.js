@@ -1,13 +1,35 @@
 var Modelo = {
+    notificarCambio: function(escuchadores, figura, propiedad, valorAntiguo, valorNuevo) {
+        for (var i = 0; i < escuchadores.length; i++) {
+            escuchadores[i].notificar(figura, propiedad, valorAntiguo, valorNuevo);
+        }
+    },
     Rectangulo: {
-        calcularDeVerdadArea: function(ancho, alto) { return ancho * alto; },
-        calcularDeVerdadPerimetro: function(ancho, alto) { return alto * 2 + ancho * 2; },
+        area: 0,
+        perimetro: 0,
+        volumen: 0,
+        escuchadores: [],
+        calcularDeVerdadArea: function(ancho, alto) {
+            var areaNueva = ancho * alto;
+            Modelo.notificarCambio(this.escuchadores, "rectangulo", "area", this.area, areaNueva);
+            this.area = areaNueva;
+        },
+        calcularDeVerdadPerimetro: function(ancho, alto) {
+
+            var perimetroNuevo = alto * 2 + ancho * 2;
+            Modelo.notificarCambio(this.escuchadores, "rectangulo", "perimetro", this.perimetro, perimetroNuevo);
+            this.perimetro = perimetroNuevo;
+        },
         calcularDeVerdadVolumen: function(ancho, alto, profundidad) {
             return this.calcularDeVerdadArea(ancho, alto) * profundidad;
+        },
+        registrar: function(controlador) {
+            this.escuchadores.push(controlador);
         }
     },
     Elipse: {
         calcularDeVerdadArea: function(ancho, alto) {
+
             return (ancho / 2) * (alto / 2) * Math.PI;
         },
         calcularDeVerdadPerimetro: function(ancho, alto) {
