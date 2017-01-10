@@ -15,7 +15,7 @@ FactoriaFiguras.prototype.crearFigura = function(opciones) {
     var nuevaVista = new this.vistaFigura(padreDOM, opciones.tipoFigura);
     switch (opciones.tipoFigura) {
         case "rectangulo":
-            this.modeloFigura = Modelo.Rectangulo;
+            this.modeloFigura = ConVolumen(Modelo.Rectangulo);
             break;
         case "triangulo":
             this.modeloFigura = Modelo.TrianguloEquilatero;
@@ -28,4 +28,12 @@ FactoriaFiguras.prototype.crearFigura = function(opciones) {
             break;
     }
     return new FiguraControlador(nuevaVista, this.modeloFigura);
+}
+ConVolumen = function(modeloFigura) {
+    modeloFigura.calcularDeVerdadVolumen = function(ancho, alto, profundidad) {
+        var volumenNuevo = modeloFigura.calcularDeVerdadArea(ancho, alto, true) * profundidad;
+        Modelo.notificarCambio(modeloFigura.escuchadores, "rectangulo", "volumen", modeloFigura.volumen, volumenNuevo);
+        modeloFigura.volumen = volumenNuevo;
+    }
+    return modeloFigura;
 }
