@@ -10,23 +10,44 @@ header {
 h1 {
 	background-color: #FFFF88;	
 }
+/* Mientras que sea mayor que 500px el navegador...*/
+@media (min-width: 500px),(orientation: landscape) {
+	nav {
+		background-color: lemonchiffon;
+		float: left;
+		width: 20%;
+		height: 260px;
 /* overflow: Que no sobresalga */
-nav {
-	background-color: lemonchiffon;
-	float: left;
-	width: 20%;
-	height: 260px;
-	overflow: hidden;
+		overflow: hidden;
+	}
+	aside {
+		background-color: aquamarine;
+		float: right;
+		width: 20%;
+		height:140px;
+		padding-left: 20px;
+		padding-top: 10px;
+	}
+}
+/* Mientras que sea mayor que 500px el navegador...*/
+@media (max-width: 500px), (orientation: portrait) {
+	nav {
+		background-color: lemonchiffon;
+		float: none;
+		width: 49%;
+		height: 260px;
+		overflow: hidden;
+	}
+	aside {
+		background-color: aquamarine;
+		float: none;
+		width: 49%;
+		height:140px;
+		padding-left: 20px;
+		padding-top: 10px;
+	}
 }
 /*  */
-aside {
-	background-color: aquamarine;
-	float: right;
-	width: 20%;
-	height:140px;
-	padding-left: 20px;
-	padding-top: 10px;
-}
 /*  */
 section {
 	background-color: lavenderblush;
@@ -62,7 +83,7 @@ li[class="ultimo_li"]{
 }
 /* Cualquier hijo de cualquier DIV, cuando se le pasa el ratón por encima */
 div > *:hover{
-	color: blue;	
+	color: #00F4;	
 }
 /* cualquiera con clase primer_li*/
 .primer_li {
@@ -114,7 +135,8 @@ li::after {
 }
 /* Los hijos impares de los hijos de un div */
 div > *:nth-child(odd) {
-	color: red;
+	color: #F0404080;
+	color: #F448;
 }
 /* Sombreando cajas y fuentes */
 article {
@@ -125,8 +147,21 @@ p::first-letter {
 	font-size: 40px;
 	text-transform: uppercase;
 }
+article p {
+	border: solid 3px black;
+}
+article p:nth-child(1) {
+	display: block;
+}
+article p:nth-child(2) {
+	display: inline;
+}
+article p:nth-child(3),article p:nth-child(4),article p:nth-child(5) {
+	display: inline-block;
+	width: 120px;
+}
 /*Separando en columnas*/ 
-article {
+/* article {
 	column-count: 3;
 	column-width: 50px;
 	-moz-column-count: 3;
@@ -137,8 +172,8 @@ article {
 	-moz-column-gap: 10px;
 	-moz-column-width: 50px;
 	/* */
-	/* column-width: define el ancho de cada columna, por defecto es auto. */
-}
+	/* column-width: define el ancho de cada columna, por defecto es auto. 
+}*/
 /*li::after {
 	
 	content: url(images.png);

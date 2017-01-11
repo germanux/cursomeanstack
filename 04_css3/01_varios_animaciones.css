@@ -1,0 +1,44 @@
+/* h1 {
+  animation-duration: 1s;
+  animation-name: entrada_h1;
+  animation-iteration-count: infinite;	
+  animation-direction: alternate;
+  /*visibility: hidden;
+} *//*
+section header h1 {
+  animation-delay: 3s;  
+}
+@keyframes entrada_h1 {
+	from {
+		margin-left: 100%;
+		width: 50%
+	}
+	75% {
+	  font-size: 300%;
+	  margin-left: 25%;
+	  width: 150%;
+	}
+	to {
+	margin-left: 0%;
+	width: 100%;
+	}
+}*/
+
+aside a {
+	  animation-duration: 1.5s;
+	  animation-name: anim_enlaces;
+	  animation-play-state: paused;
+	  animation-timing-function: ease-out;	
+	  
+}
+.reproducir {
+	animation-play-state: running;	
+}
+@keyframes anim_enlaces {
+	from {
+		margin-left: 100%;
+	}
+	to {
+		margin-left: 0%;
+	}
+}
