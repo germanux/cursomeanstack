@@ -15,7 +15,7 @@ nav {
 	float: left;
 	overflow: auto;
 	width: 20%;
-	height: 160px;
+	height: 260px;
 	overflow: hidden;
 }
 aside {
@@ -42,3 +42,81 @@ section header, section article, section footer {
 #articleFooter {
 	margin-top: 15px;
 }
+li[class="ultimo_li"]{
+	margin-left: 10px;
+	background-color: white;	
+}
+/**[id]{
+	background-color: blue;	
+}*/
+#input_1:focus {
+	background-color: yellow;	
+}
+/* Cualquier hijo de cualquier DIV */
+div > *:hover{
+	color: blue;	
+}
+.primer_li {
+	margin-left: 10px;
+	background-color: white;	
+}
+.primer_li ~ li {
+	margin-left: 20px;
+	background-color: red;
+}
+/* * {
+	border-radius: 10px 10px 10px 10px;
+}*/
+.letra-pequena {
+	font-size: 8px;
+}
+.letra-grande {
+	font-size: 30px;
+}
+.borde {
+	/* border-style: solid;
+	border-color: black; */
+	border: solid 3px black;
+	border-radius: 10px 10px 10px 10px;	
+}
+.borde-grande {
+	border-radius: 20px 20px 20px 20px;	
+}
+.borde-pequeno {
+	border-radius: 5px 5px 5px 5px;
+}
+.borde-rojo {
+	border-color: red;
+}
+.borde-azul {
+	border-color: blue;
+}
+*[class~="borde-pequeno"] {
+	padding: 20px;
+}
+ul {
+    list-style-image: url('images.png');
+}
+li::after {
+	content: "(*)";
+}
+div > *:nth-child(odd) {
+	color: red;
+}
+article {
+	box-shadow: 20px 6px 5px #0F0;
+	text-shadow: 2px 2px 3px #000;
+}
+p::first-letter {
+	font-size: 40px;
+	text-transform: uppercase;
+}
+/*li::after {
+	content: url(images.png);
+}/*/
+/* *[class*="pequen"] {
+	padding: 5px;
+}*/
+
+
+
