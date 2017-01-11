@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Mi primera App SQLite</title>
+        <script type="text/javascript" src="js/index.js"></script>
+    </head> 
+	<body>
+    <h1>Mi primera App SQLite</h1>
+    <p>Open Database</p>
+    <div id="qrpopup" > //The hidden div tag for implementing the popup
+            <hr/>
+            <input type="text" id="editNameBox"><br>
+            <input type="text" id="editNumberBox"><br>
+            <button onclick="goDelete()">Delete</button>
+            <button onclick="goEdit()">Edit</button>
+            <button onclick="document.getElementById('qrpopup').style.display='none';">Discard</button>
+    </div>
+
+    <div>
+        Name<input type="text" value="Name" id="txtName">
+        Number<input type="text" value="123" id="txtNumber"><hr/>
+    </div>
+    <div id="tblDiv"></div>
+    <div style="text-align: center">
+        <button onclick="goInsert()">Insert</button>
+        <button onclick="goSearch()">Search</button>
+        <button onclick="successCB()">Show All</button>
+    </div>
+  </body>
+</html>
