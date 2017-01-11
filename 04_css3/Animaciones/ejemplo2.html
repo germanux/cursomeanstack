@@ -1,0 +1,85 @@
+<html>
+<head>
+    <title>Animaciones CSS3 | Funciones</title>
+    <style type="text/css">
+        
+        @-webkit-keyframes animacion{
+            from {
+               left: 0px;
+            }
+            to {
+               left: 150px;
+            }
+        }
+        
+        .capa{
+            margin-bottom:30px;
+            text-align:center;
+            position:relative;
+            width:300px;
+            height:60px;
+            font-family:arial;
+            font-size:22px;
+            font-weight:bold;
+            background-color: rgb(55, 190, 90);
+        }
+        
+        #capaEase{
+            -webkit-animation-name:animacion;
+            -webkit-animation-duration: 2s;
+            -webkit-animation-iteration-count:infinite;
+            -webkit-animation-direction:alternate;
+            -webkit-animation-timing-function:ease;
+        }
+        
+        #capaLinear{
+            -webkit-animation-name:animacion;
+            -webkit-animation-duration: 2s;
+            -webkit-animation-iteration-count:infinite;
+            -webkit-animation-direction:alternate;
+            -webkit-animation-timing-function:linear;
+        }
+        
+        #capaEaseIn{
+            -webkit-animation-name:animacion;
+            -webkit-animation-duration: 2s;
+            -webkit-animation-iteration-count:infinite;
+            -webkit-animation-direction:alternate;
+            -webkit-animation-timing-function:ease-in;
+        }
+        
+        #capaEaseOut{
+            -webkit-animation-name:animacion;
+            -webkit-animation-duration: 2s;
+            -webkit-animation-iteration-count:infinite;
+            -webkit-animation-direction:alternate;
+            -webkit-animation-timing-function:ease-out;
+        }
+       
+        #capaEaseInOut{
+            -webkit-animation-name:animacion;
+            -webkit-animation-duration: 2s;
+            -webkit-animation-iteration-count:infinite;
+            -webkit-animation-direction:alternate;
+            -webkit-animation-timing-function:ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="capa" id="capaEase">
+        Ease
+    </div>
+    <div class="capa" id="capaLinear">
+        Linear
+    </div>
+    <div class="capa" id="capaEaseIn">
+        EaseIn
+    </div>
+    <div class="capa" id="capaEaseOut">
+        EaseOut
+    </div>
+    <div class="capa" id="capaEaseInOut">
+        EaseInOut
+    </div>
+</body>
+</html>

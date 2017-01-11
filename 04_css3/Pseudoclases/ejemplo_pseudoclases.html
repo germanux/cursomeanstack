@@ -1,0 +1,69 @@
+<html>
+<head>
+    <title>Pseudo-clases</title>
+    <style type="text/css">
+        .nthchild:nth-child(odd){
+            color:red;
+        }
+        
+        .nthlastchild:nth-last-child(2){
+            color:blue;
+        }
+        
+        div>p:nth-of-type(even){
+            color:red;
+        }
+        
+        div>p:first-of-type{
+            font-style:italic;
+        }
+        
+        h3:not(.rojo){
+            font-style:italic;
+        }
+        
+        .rojo{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejemplo de nth-child.</h1>
+    <p>Los elementos impares aparecer$aacute;n en rojo (:nth-child(odd))</p>
+    <ul>
+        <li class="nthchild">Elemento hijo impar</li>
+        <li class="nthchild">Elemento hijo par</li>
+        <li class="nthchild">Elemento hijo impar</li>
+        <li class="nthchild">Elemento hijo par</li>
+    </ul>
+    <h1>Ejemplo de nth-last-child.</h1>
+    <p>El segundo elemento desde el &uacute;ltimo hijo aparecer‡n en azul (:nth-last-child(2))</p>
+    <ul>
+        <li class="nthlastchild">Elemento hijo</li>
+        <li class="nthlastchild">Elemento hijo</li>
+        <li class="nthlastchild">Elemento hijo seleccionado</li>
+        <li class="nthlastchild">Elemento hijo</li>
+        
+    </ul>
+    <h1>Ejemplo de nth-of-type.</h1>
+    <p>Selecciona los elementos tipo p pares dentro de un div (div>p:nth-of-type(even))</p>
+    <div>
+        <p>P&aacute;rrafo impar</p>
+        <p>P&aacute;rrafo par</p>
+        <p>P&aacute;rrafo impar</p>
+        <p>P&aacute;rrafo par</p>
+    </div>
+      <h1>Ejemplo de first-of-type.</h1>
+    <p>Selecciona el primer elemento tipo p dentro de un div (div>p:first-of-type)</p>
+    <div>
+        <h2>Este es el t&iacute;tulo. Aunque es hijo de div no se ve afectado.</h2>
+        <p>El primer p&aacuterrafo es de introducci—n y lo quiero en cursiva</p>
+        <p>Los siguientes p&aacuterrafos tampoco se ven afectados</p>
+    </div>
+    <h1>Ejemplo de not(S).</h1>
+    <p>Selecciona los elementos h3 que no son rojos y los pasa a cursiva</p>
+    <h3 class="rojo">Clase rojo<h3>
+    <h3 class="rojo">Clase rojo<h3>
+    <h3>Sin clase<h3>
+</body>
+</html>

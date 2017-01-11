@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>Bordes CSS3 | border-image</title>
+    <style type="text/css">
+       
+        .capa{
+            border-width: 20px 30px 25px 20px;;
+            width:100px;
+            height:80px;
+            margin-bottom:30px;
+        }
+        #capa1{
+            -webkit-border-image: url("borde.png") 33% stretch stretch;
+            -moz-border-image: url("borde.png") 33% stretch stretch;
+        }
+        #capa2{
+            -webkit-border-image: url("borde.png") 33% repeat repeat;
+            -moz-border-image: url("borde.png") 33% repeat repeat;
+        }
+        #capa3{
+            -webkit-border-image: url("borde.png") 33% round round;
+            -moz-border-image: url("borde.png") 33% round round;
+        }
+    </style>
+</head>
+<body>
+    <div id="capa1" class="capa">
+    </div>
+     <div id="capa2" class="capa">
+    </div>
+      <div id="capa3" class="capa">
+    </div>
+</body>
+</html>

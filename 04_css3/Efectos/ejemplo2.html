@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>Efectos CSS3 | box-shadow</title>
+    <style type="text/css">
+        .sombra{
+            text-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+            -webkit-text-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+            -moz-text-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+        }
+        
+        .sombra2{
+            box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+            -webkit-box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+            -moz-box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+        }
+        
+        #capa{
+            padding-top:8px;
+            margin-top:30px;
+            margin-left:30px;
+            width:200px;
+            height:150px;
+            background-color:rgb(130,170,190);
+        }
+      
+    </style>
+</head>
+<body>
+    <div id="capa">
+        <p class="sombra">
+            Este p&aacute;rrafo tiene aplicado text-shadow.
+        </p>
+        <p class="sombra2">
+            Este otro tiene aplicado box-shadow.
+        </p>
+    </div>
+</body>
+</html>

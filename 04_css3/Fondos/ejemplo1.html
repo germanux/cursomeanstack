@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>Fondos CSS3 | background-origin </title>
+    <style type="text/css">
+        .capa{
+            margin-top:10px;
+            border-style:dotted;
+            border-width:10px;
+            border-color:red;
+            padding:20px;
+            width:350px;
+            height:200px;
+            background-color:rgb(130,170,190);
+            background-image:url("bg1.png");
+        }
+        
+        #capa1{
+            background-origin:border-box;
+            -moz-background-origin:border-box;
+            -webkit-background-origin:border-box;
+        }
+        
+        #capa2{
+            background-origin:padding-box;
+            -moz-background-origin:padding-box;
+            -webkit-background-origin:padding-box;
+        }
+        
+        #capa3{
+            background-origin:content-box;
+            -moz-background-origin:content-box;
+            -webkit-background-origin:content-box;
+        }
+ 
+    </style>
+</head>
+<body>
+    <div class="capa" id="capa1">
+    </div>
+    <div class="capa" id="capa2">
+    </div>
+    <div class="capa" id="capa3">
+    </div>
+</body>
+</html>

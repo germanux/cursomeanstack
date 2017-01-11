@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>Animaciones CSS3</title>
+    <style type="text/css">
+        
+        @-webkit-keyframes animacion{
+            from {
+               left: 0px;
+            }
+            to {
+               left: 100px;
+               width: 40px;
+            }
+        }
+        @-webkit-keyframes animacion2{
+            from {
+               top: 0px;
+            }
+            to {
+               top: 20px;
+            }
+        }
+        
+        #capa{
+            position:relative;
+            -webkit-animation-name:animacion, animacion2;
+            -webkit-animation-duration: 2s;
+            -webkit-animation-iteration-count:infinite;
+            -webkit-animation-direction:alternate;
+            width:300px;
+            height:180px;
+            padding:50px;
+            font-family:arial;
+            font-size:22px;
+            font-weight:bold;
+            background-color: rgb(55, 190, 90);
+        }
+    </style>
+</head>
+<body>
+    <div id="capa">
+    </div>
+</body>
+</html>

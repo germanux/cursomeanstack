@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Selectores de atributos</title>
+    <style type="text/css">
+        a[href*="ejemplo"]{
+            color:red;
+        }
+        a[href^="mailto:"]{
+            color:blue;
+        }
+        a[href$=".php"]{
+            color:green;    
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="http://wwww.antonionavajas.com/ejemplos">Esto es un enlace a un ejemplo y aparecer&aacute; en rojo</a></li>
+        <li><a href="mailto:direccion@decorreo.com">Esto es un enlace a una direcci&oacute;n de correo y aparecer&aacute; en azul</a></li>
+        <li><a href="http://wwww.antonionavajas.com/ejemplos.php">Esto es un enlace a una p&aacute;gina php y aparecer&aacute; en verde</a></li>
+    </ul>
+</body>
+</html>

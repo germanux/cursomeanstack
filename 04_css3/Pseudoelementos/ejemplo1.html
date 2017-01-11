@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>Pseudo-elementos</title>
+    <style type="text/css">
+        div#ejemplo{
+            width:200px;
+            height:200px;
+        }
+        p::first-letter{
+            color:red;
+        }
+        p::first-line{
+            color:blue;
+        }
+        h1::after{
+            content:".";
+        }
+        h1::before{
+            content:"Ejemplo de ";
+        }
+    </style>
+</head>
+<body>
+    <div id="ejemplo">
+        <h1>pseudo-elementos</h1>
+        <p>Esto es un ejemplo usando pseudo elementos en CSS3 donde pasamos coloreamos de rojo la primera letra con first-letter, coloreamos de azul la primera l&iacute;nea con first-line, e incluimos en el t’tulo el texto "Ejemplo de" y "." con before y after respectivamente.
+    </div>
+</body>
+</html>

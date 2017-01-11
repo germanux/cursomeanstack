@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>Bordes CSS3 | border-radius </title>
+    <style type="text/css">
+        #capa1{
+            border-radius:15px;
+            padding:20px;
+            width: 100px;
+            background-color: rgba(130,170,190,0.7);
+        }
+        #capa2{
+            border-radius:15px 0px 15px 25px;
+            margin-top:20px;
+            padding:20px;
+            width: 100px;
+            background-color: rgba(10,170,190,0.7);
+        }
+        #capa3{
+            border-radius:100px / 50px;
+            margin-top:20px;
+            padding:20px;
+            width:300px;
+            height:300px;
+            background-color: rgba(100,170,80,0.7);
+        }
+    </style>
+</head>
+<body>
+    <div id="capa1">
+        Para esquinas con un radio comœn le damos un s&oacute;lo valor a border-radius.
+    </div>
+    <div id="capa2">
+        Para esquinas con radios diferentes definimos los cuatro valores.
+    </div>
+    <div id="capa3">
+        Para esquinas irregulares definimos los valores de radio horizontal y radio vertical separados por una barra 
+    </div>
+</body>
+</html>

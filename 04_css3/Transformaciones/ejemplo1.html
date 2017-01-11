@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>Transformaciones CSS3</title>
+    <style type="text/css">
+        #texto{
+            padding:50px;
+            font-family:arial;
+            font-size:22px;
+            font-weight:bold;
+        }
+        .giro{
+            -moz-transform: rotate(30deg);
+            -webkit-transform: rotate(30deg);
+            transform: rotate(30deg);
+        }
+        
+        .inclino{
+            -moz-transform: skew(30deg, 3deg);
+            -webkit-transform: skew(30deg, 3deg);
+            transform: skew(30deg, 15deg);
+        }
+        
+        .escalo{
+            -moz-transform: scale(1, 0.6);
+            -webkit-transform: scale(1, 0.6);
+            transform: scale(1, 0.6);
+        }
+        
+        .traslado{
+            -moz-transform: translate(50px,5px);
+            -webkit-transform: translate(50px,5px);
+            transform: translate(50px,5px);
+        }
+      
+    </style>
+</head>
+<body>
+    <div id="texto" class="inclino">
+        Este es un texto inclinado!
+    </div>
+    <div id="texto" class="escalo">
+        Este es un texto escalado!
+    </div>
+    <div id="texto" class="giro">
+        Este es un texto girado!
+    </div>
+    <div id="texto" class="traslado">
+        Este es un texto movido!
+    </div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Filtros CSS3</title>
+        <meta charset='utf-8'>
+            
+            <style>
+                ul{
+                    list-style: none;
+                }
+                
+                li{
+                    border: thin solid silver;
+                    display: inline-block;
+                    margin: 5px;
+                    padding: 10px;
+                    text-align: center;
+                }
+                
+                li span{
+                    display: block;
+                    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                    font-size: 12px;
+                    font-style: italic;
+                    font-weight: 400;
+                }
+                
+                li img, li h1, video, canvas{
+                    transition: all 0.3s ease-in;
+                    -o-transition: all 0.3s ease-in;
+                    -ms-transition: all 0.3s ease-in;
+                    -moz-transition: all 0.3s ease-in;
+                    -webkit-transition: all 0.3s ease-in;
+                }
+                
+                li img:hover, li h1:hover, video:hover, canvas:hover{
+                    -webkit-filter: none;
+                    transition: all 0.3s ease-in;
+                    -o-transition: all 0.3s ease-in;
+                    -ms-transition: all 0.3s ease-in;
+                    -moz-transition: all 0.3s ease-in;
+                    -webkit-transition: all 0.3s ease-in;
+                }
+                
+                .color{
+                    -webkit-filter: hue-rotate(200deg);  
+                }
+                
+                .gris{
+                    -webkit-filter: grayscale(100%);  
+                }
+                
+                .saturacion{
+                    -webkit-filter: saturate(1000%);
+                }
+                
+                .sepia{
+                    -webkit-filter: sepia(100%);  
+                }
+                
+                .desenfoque{
+                    -webkit-filter: blur(4px);  
+                }
+                
+                .brillo{
+                    -webkit-filter: brightness(-30%);
+                }
+                
+                .contraste{
+                    -webkit-filter: contrast(30%);
+                }
+                
+                .invertir{
+                    -webkit-filter: invert(90%);
+                }
+                
+                .sombra{
+                    -webkit-filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.6));
+                }
+                
+                .opacidad{
+                    -webkit-filter: opacity(0.3);
+                }
+            </style>
+    </head>
+
+    <body onLoad="dibujo()">
+        
+        <ul>
+            <li><img src='gaticos.jpg' alt='Gatico!'><span>Original</span></li>
+            <li><img src='gaticos.jpg' class='color' alt='Gatico!'><span>Rotacion de color 200º</span></li>
+            <li><img src='gaticos.jpg' class='brillo' alt='Gatico!'><span>Brillo -30%</span></li>
+            <li><img src='gaticos.jpg' class='contraste' alt='Gatico!'><span>Contraste -30%</span></li>
+            <li><img src='gaticos.jpg' class='saturacion' alt='Gatico!'><span>Saturación 1000%</span></li>
+            <li><img src='gaticos.jpg' class='invertir' alt='Gatico!'><span>Invertido 90% (siniestro)</span></li>
+            <li><img src='gaticos.jpg' class='gris' alt='Gatico!'><span>Gris 100%</span></li>
+            <li><img src='gaticos.jpg' class='sepia' alt='Gatico!'><span>Sepia 100%</span></li>
+            <li><img src='gaticos.jpg' class='desenfoque' alt='Gatico!'><span>Desenfocado 4px</span></li>
+            <li><img src='gaticos.jpg' class='sombra' alt='Gatico!'><span>Sombra 2px 2px 2px negro 60% alpha</span></li>
+            <li><img src='gaticos.jpg' class='opacidad' alt='Gatico!'><span>Transparencia 30%</span></li>
+        </ul>
+        
+        <ul>
+            <li><h1 class='desenfoque sombra'>A muchos otros elementos como textos también le afectan los filtros</h1></li>
+        </ul>
+        
+        <ul>
+            <li>
+                <video class='gris' width='640' height='360' controls autoplay>
+                    <source src="video.mp4" type="video/mp4" /> 
+                </video>
+            </li>
+        </ul>
+        
+        <ul>
+            <li>
+                <canvas id='dibujo' class='desenfoque' width='640' height='360'>
+                </canvas>
+            </li>
+        </ul>
+    </body>
+<script>
+    function dibujo(){
+    var canvas = document.getElementById("dibujo").getContext('2d');
+    canvas.beginPath();
+    canvas.moveTo(250,50);
+    canvas.lineTo(350,200);
+    canvas.lineTo(150,200);
+    canvas.lineTo(250,50);
+    canvas.fill();
+    }
+</script>
+</html>

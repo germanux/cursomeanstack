@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>Efectos CSS3 | box-shadow </title>
+    <style type="text/css">
+        .sombra{
+            box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+            -webkit-box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+            -moz-box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+        }
+        
+        #capa1{
+            padding-top:8px;
+            margin-top:10px;
+            width:350px;
+            height:230px;
+            background-color:rgb(130,170,190);
+        }
+        #texto{
+            text-align:center;
+            font-family:arial;
+            font-size:40px;
+            font-weight:bold;
+            color:rgba(256,256,256,1);
+            text-shadow: 1px 1px 0px rgba(230,230,230,1), 2px 2px 0px rgba(200,200,200,1), 3px 3px 0px rgba(180,180,180,1), 4px 4px 0px rgba(160,160,160,1), 5px 5px 0px rgba(0,0,0,1), 8px 8px 20px rgba(0,0,0,0.5);
+        }
+        .tresde{
+            font-size:80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sombra" id="capa1">
+        <h1 id="texto">CSS3 AHORA CON EFECTOS <span class="tresde">3D</span></h1>
+    </div>
+</body>
+</html>
