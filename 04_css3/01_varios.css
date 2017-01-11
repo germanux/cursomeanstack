@@ -1,23 +1,24 @@
+/* fondo al body*/
 body {
 	background-color: lightblue;
 }
-
+/* fondo y alineación al header*/
 header {
 	background-color: red;
 	text-align: center;
 }
-
 h1 {
 	background-color: #FFFF88;	
 }
+/* overflow: Que no sobresalga */
 nav {
 	background-color: lemonchiffon;
 	float: left;
-	overflow: auto;
 	width: 20%;
 	height: 260px;
 	overflow: hidden;
 }
+/*  */
 aside {
 	background-color: aquamarine;
 	float: right;
@@ -26,15 +27,18 @@ aside {
 	padding-left: 20px;
 	padding-top: 10px;
 }
+/*  */
 section {
 	background-color: lavenderblush;
 	margin-left: 21%;
 	width: 54%;
 }
+/* Cualquiera de los tres: hijos o nietos header, article o footer de section */
 section header, section article, section footer {
 	background-color: aquamarine;
 	margin-right: 20px;
 }
+/* Con id pageFooter */
 #pageFooter {
 	background-color: coral;
 	margin-top: 20px;
@@ -42,24 +46,30 @@ section header, section article, section footer {
 #articleFooter {
 	margin-top: 15px;
 }
+/* todos los <li> con clase igual ultimo_li */
 li[class="ultimo_li"]{
 	margin-left: 10px;
 	background-color: white;	
 }
-/**[id]{
+/**
+
+[id]{
 	background-color: blue;	
 }*/
+/* cuando el input de ID input_1 tiene el foco */
 #input_1:focus {
 	background-color: yellow;	
 }
-/* Cualquier hijo de cualquier DIV */
+/* Cualquier hijo de cualquier DIV, cuando se le pasa el ratón por encima */
 div > *:hover{
 	color: blue;	
 }
+/* cualquiera con clase primer_li*/
 .primer_li {
 	margin-left: 10px;
 	background-color: white;	
 }
+/* cualquier hermano posterior de cualquiera con clase primer_li*/
 .primer_li ~ li {
 	margin-left: 20px;
 	background-color: red;
@@ -94,15 +104,19 @@ div > *:hover{
 *[class~="borde-pequeno"] {
 	padding: 20px;
 }
+/* Cambiando la imagen de ul */
 ul {
     list-style-image: url('images.png');
 }
+/* añadir contenido a todos los <li> */
 li::after {
 	content: "(*)";
 }
+/* Los hijos impares de los hijos de un div */
 div > *:nth-child(odd) {
 	color: red;
 }
+/* Sombreando cajas y fuentes */
 article {
 	box-shadow: 20px 6px 5px #0F0;
 	text-shadow: 2px 2px 3px #000;
@@ -111,7 +125,22 @@ p::first-letter {
 	font-size: 40px;
 	text-transform: uppercase;
 }
+/*Separando en columnas*/ 
+article {
+	column-count: 3;
+	column-width: 50px;
+	-moz-column-count: 3;
+	-webkit-column-count: 3;
+	column-rule: 2px;
+	column-gap: 10px;
+	-moz-column-rule: 2px;
+	-moz-column-gap: 10px;
+	-moz-column-width: 50px;
+	/* */
+	/* column-width: define el ancho de cada columna, por defecto es auto. */
+}
 /*li::after {
+	
 	content: url(images.png);
 }/*/
 /* *[class*="pequen"] {
