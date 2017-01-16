@@ -1,0 +1,24 @@
+{
+    "animales":[
+        {
+            "id" : 1,
+            "nombre" : "Richard Parker",
+            "tipo" : "Tigre de bengala"
+        },
+        {
+            "id" : 2,
+            "nombre" : "Leo",
+            "tipo" : "León"
+        },
+        {
+            "id" : 3,
+            "nombre" : "Babe",
+            "tipo" : "Cerdito"
+        },
+        {
+            "id" : 4,
+            "nombre" : "Pink Panther",
+            "tipo" : "Pantera"
+        }
+    ]
+}
