@@ -8,7 +8,9 @@ function markBySize() {
     if ($(this).text().length < 100) {
         $(this).css("background-color", "#ff0");
     } else {
-        $(this).on("contextmenu", mostrarAlertaOnContextMenu)
+        $(this).on(
+            "contextmenu",
+            mostrarAlertaOnContextMenu);
     }
 }
 
