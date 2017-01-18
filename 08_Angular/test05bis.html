@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+  <meta charset="utf-8">
+  <script src="scripts/angular.js"></script>
+  <script src="scripts/test05bis.js"></script>
+</head>
+
+<body ng-controller="PruebaController">
+
+<input type="checkbox" ng-model="showNombre">¿Mostrar nombre?
+<br>
+<div ng-if="showNombre">
+  Nombre: <input ng-model="nombre" >
+  <br>
+  El valor de "nombre" en el $scope del "ng-if" es : {{nombre}}
+</div>
+El valor de "nombre" en el $scope del "Controlador" es : <strong>{{nombre}}</strong>
+
+<hr>
+
+<input type="checkbox" ng-model="modelo.showApellido">¿Mostrar apellido?
+<br>
+<div ng-if="modelo.showApellido">
+  Apellido: <input ng-model="modelo.apellido" >
+  <br>
+  El valor de "apellido" en el $scope del "ng-if" es : {{modelo.apellido}}
+</div>
+El valor de "apellido" en el $scope del "Controlador" es : {{modelo.apellido}}
+
+</body>
+
+</html>

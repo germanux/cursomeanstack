@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html data-ng-app="">
+    <head>
+        <meta charset="utf-8">
+        <title>Cuarto ejemplo de AngularJS: Filtros y ordenación</title>
+        <link rel="stylesheet" href="scripts/bootstrap-3.3.6-dist/css/bootstrap.min.css">
+    </head>
+
+    <body>
+        <!-- Campo de texto para introducir nombre del cliente -->
+        Escribe el nombre del cliente aquí:
+        <br/>
+        <input type="text" data-ng-model="nameText"/>
+        
+        <div class="container" data-ng-init="customers=[{name: 'Jorge Arévalo', city: 'Madrid'}, {name: 'Elena Nieto del Bosque', city: 'Toledo'}, {name: 'Javier Ucto', city: 'Murcia'}, {name: 'Jose Villanas', city: 'Córdoba'}, {name: 'Marta Burete', city: 'Gijón'}]">
+            
+            <h3>Listado de clientes</h3>
+            
+            <!-- Listado de clientes incluyendo nombre y ciudad, y filtrando por el nombre introducido arriba 
+
+                Nombres en mayúscula
+                Ciudades en minúsculas
+                Ordenados por ciudad
+            -->
+            <ul>
+                <li data-ng-repeat="customer in customers | filter:nameText | orderBy:'name'">{{ customer.name | uppercase}} - {{ customer.city | lowercase}}</li>
+            </ul>
+          
+        </div>
+        
+        <script src="scripts/jquery-1.12.1.min.js"></script>
+        <script src="scripts/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+        <script src="scripts/angular.min.js"></script>
+
+    </body>
+</html>

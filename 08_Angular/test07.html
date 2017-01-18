@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<!-- Pongamos nombre a la app -->
+<html data-ng-app="app">
+    <head>  
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <title>Séptimo ejemplo de AngularJS: Enrutado</title>
+        <link rel="stylesheet" href="scripts/bootstrap-3.3.6-dist/css/bootstrap.min.css">
+    </head>
+
+    <body>
+        <!-- Añadimos controlador en el div -->
+        <div class="container">
+            
+            <h2>Ejemplo básico de enrutado</h2>
+            <ul class="nav">
+                <li><a href="#add-client">Nuevo cliente</a></li>
+                <li><a href="#list-clients">Listado de clientes</a></li>
+            </ul>
+            
+            
+            <div ng-view></div>
+        </div>
+        
+        <script src="scripts/jquery-1.12.1.min.js"></script>
+        <script src="scripts/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+        <script src="scripts/angular.min.js"></script>
+        <script src="scripts/angular-route.min.js"></script>
+        <script src="scripts/test07.js"></script>
+
+    </body>
+</html>

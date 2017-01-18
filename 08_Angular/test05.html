@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<!-- Pongamos nombre a la app -->
+<html data-ng-app="app">
+    <head>
+        <meta charset="utf-8">
+        <title>Quinto ejemplo de AngularJS: Separando el controlador</title>
+        <link rel="stylesheet" href="scripts/bootstrap-3.3.6-dist/css/bootstrap.min.css">
+    </head>
+
+    <body>
+        <!-- Campo de texto para introducir nombre del cliente -->
+        Escribe el nombre del cliente aquí:
+        <br/>
+        <input type="text" data-ng-model="nameText"/>
+        
+        <!-- Añadimos controlador en el div -->
+        <div class="container" data-ng-controller="SimpleController">
+            
+            <h3>Listado de clientes</h3>
+            
+            <!-- Listado de clientes incluyendo nombre y ciudad, y filtrando por el nombre introducido arriba 
+
+                Nombres en mayúscula
+                Ciudades en minúsculas
+                Ordenados por nombre
+            -->
+            <ul>    
+                <li data-ng-repeat="customer in customers | filter:nameText | orderBy:'name'">{{ customer.name | uppercase}} - {{ customer.city | lowercase}}</li>
+            </ul>
+          
+        </div>
+        
+        <script src="scripts/jquery-1.12.1.min.js"></script>
+        <script src="scripts/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+        <script src="scripts/angular.min.js"></script>
+        <script src="scripts/test05.js"></script>
+        
+    </body>
+</html>

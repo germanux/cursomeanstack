@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<!-- Pongamos nombre a la app -->
+<html data-ng-app="app">
+    <head>  
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <title>Noveno ejemplo de AngularJS: Constant</title>
+        <link rel="stylesheet" href="scripts/bootstrap-3.3.6-dist/css/bootstrap.min.css">
+    </head>
+
+    <body>
+        <!-- Añadimos controlador en el div -->
+        <div class="container" data-ng-controller="MiControlador">
+            El valor de la constante 'Mi Constante' es: {{valor}}
+            <br/>
+            El área de un círculo de radio 10 es {{area_circulo}}
+
+        </div>
+        
+        <script src="scripts/jquery-1.12.1.min.js"></script>
+        <script src="scripts/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+        <script src="scripts/angular.min.js"></script>
+        <script src="scripts/test09.js"></script>
+
+    </body>
+</html>

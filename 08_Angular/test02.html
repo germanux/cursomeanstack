@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html data-ng-app="">
+    <head>
+        <meta charset="utf-8">
+        <title>Segundo ejemplo de AngularJS: ng-init y ng-repeat</title>
+        <link rel="stylesheet" href="scripts/bootstrap-3.3.6-dist/css/bootstrap.min.css">
+    </head>
+
+    <body>
+
+        <div class="container" data-ng-init="names=['Jorge', 'Carlos', 'Victor', 'Jose']">
+            <h3>Bucle con ng-repeat</h3>
+
+            <!-- Bucle que recorra los nombres y los muestre en una lista -->
+            <ul>
+                <li data-ng-repeat="name in names">{{name}}</li>
+            </ul>
+
+            <!-- NOTA: Además de la variable 'name' creada dentro del bucle, se crean también
+            otras variables:
+                $index: Un número que indica el nº de elementos(de 0 a n-1).
+                $first : Vale true si estamos en el primer elemento del bucle.
+                $last : Vale true si estamos en el último elemento del bucle.
+                $middle : Vale true si no estamos ni en el primer ni en el último elemento del bucle.
+                $even : Vale true si estamos en un elemento con $index par. (El 0 es par).
+                $odd : Vale true si estamos en un elemento con $index impar. (El 0 es par).
+
+                Todas estas variable son muy útiles para cambiar el estilo de la filas.
+            -->
+
+        </div>
+        <script src="scripts/jquery-1.12.1.min.js"></script>
+        <script src="scripts/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+        <script src="scripts/angular.min.js"></script>
+    </body>
+</html>

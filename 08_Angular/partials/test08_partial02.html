@@ -1,0 +1,22 @@
+<div class="row">
+    
+    <div class="col-sm-6">
+        <h3>Nuevo cliente</h3>
+        Nombre:<br />
+        <input type="text" data-ng-model="inputData.name" placeholder="name" />
+        <br />
+        <br />
+        Ciudad:<br />
+        <input type="text" data-ng-model="inputData.city" placeholder="city" />
+        <br />
+        <br/>
+        <button class="btn btn-primary" data-ng-click="addCustomer()">Añadir cliente</button>
+        <br />
+        <br />
+    </div>
+    
+    <div class="col-sm6" data-ng-include="'partials/test07_partial01.html'"></div>
+
+</div>
+
+

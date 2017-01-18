@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html data-ng-app="">
+    <head>
+        <meta charset="utf-8">
+        <title>Primer ejemplo de AngularJS: Directivas y data binding</title>
+    </head>
+    <body>
+
+        <!-- Campo de texto para introducir nombre y a continuación el nombre introducido -->
+        Escribe tu nombre aquí:
+        <br/>
+
+        <!-- También podríamos usar ng-bind, o ng-bind-html si queremos meter tags html -->
+        <!-- <input type="text" data-ng-model="name"/><span ngbind="name"></span> -->
+
+        <!-- La ventaja de ng-bind es que no muestra el texto hasta que la página no se haya cargado.
+        Para esto mismo está ngCloak, que espera a que se ejecute el controlador, y entonces decide
+        si muestra o no el contenido en función de ng-show o ng-hide. Si no existen, lo muestra por
+        defecto. Aunque puede que sea necesario añadir las clases nativas de ng-cloak a nuestro CSS
+        (es un hack porque a veces falla)
+        -->
+        <input type="text" data-ng-model="name"/> {{ name }}
+
+        <!-- NOTA: Usar tags html es seguro contra el cross-site scripting, porque
+        angular no va a renderizar nada que vaya dentro de <script></script>. Pero
+        necesitaremos cargar angular-ngsanitize.js y asignar name en el controlador javascript,
+        porque tenemos que cargar el módulo ngSanitize como dependencia del nuestro. -->
+
+        <!-- NOTA: Para conseguir el mismo efecto que ng-bind/ng-cloak pero en el src de una imagen
+        está ng-src. Si parte del src es una expresión {{exp}}, ng-src espera a que se cargue el
+        controlador para mostrar el elemento, y así no queda feo.
+        Lo mismo con ng-href para los enlaces.
+        -->
+
+
+        <script src="scripts/angular.min.js"></script>
+
+    </body>
+</html>

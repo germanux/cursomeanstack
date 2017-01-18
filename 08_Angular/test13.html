@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<!-- Pongamos nombre a la app -->
+<html data-ng-app="app">
+    <head>  
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <title>Decimotercer ejemplo de AngularJS: Factory + SHA</title>
+        <link rel="stylesheet" href="scripts/bootstrap-3.3.6-dist/css/bootstrap.min.css">
+    </head>
+
+    <body>
+        <!-- Añadimos controlador en el div -->
+        <div class="container" data-ng-controller="ControladorBase64">
+            Contrase&ntilde;a:<input ng-model="password" />
+            <br>
+            El hash de la contrase&ntilde;a es:
+            <br>
+            {{getHash(password)}}
+        </div>
+        
+        <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
+        <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha1.js"></script>
+        <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha256.js"></script>
+        <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha512.js"></script>
+        <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/components/enc-base64-min.js"></script>
+        <script src="scripts/jquery-1.12.1.min.js"></script>
+        <script src="scripts/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+        <script src="scripts/angular.min.js"></script>
+        <script src="scripts/test13.js"></script>
+
+    </body>
+</html>

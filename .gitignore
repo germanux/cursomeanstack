@@ -5,3 +5,4 @@ curriculum/
 app_curriculum/
 *.mp4
 desktop.ini
+*.DS_Store

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html data-ng-app="">
+    <head>
+        <meta charset="utf-8">
+        <title>Tercer ejemplo de AngularJS: Filtros</title>
+        <link rel="stylesheet" href="scripts/bootstrap-3.3.6-dist/css/bootstrap.min.css">
+    </head>
+
+    <body>
+        <!-- Campo de texto para introducir nombre del cliente -->
+        Escribe el nombre del cliente aquí:
+        <br/>
+        <input type="text" data-ng-model="nameText"/>
+
+        <div class="container" data-ng-init="customers=[{name: 'Jorge Arévalo', city: 'Madrid'}, {name: 'Elena Nieto del Bosque', city: 'Toledo'}, {name: 'Javier Ucto', city: 'Murcia'}, {name: 'Jose Villanas', city: 'Córdoba'}, {name: 'Marta Burete', city: 'Gijón'}]">
+
+            <h3>Listado de clientes</h3>
+
+            <!-- Listado de clientes incluyendo nombre y ciudad, y filtrando por el nombre introducido arriba -->
+            <ul>
+                <li data-ng-repeat="cust in customers | filter: nameText">{{cust.name}} - {{cust.city}}</li>
+            </ul>
+
+
+            <!-- NOTA: Si queremos repetir más de un elemento HTML, o lo metemos todo dentro de un mismo div
+            o hacemos esto:
+
+            <li data-ng-repeat="cust in customers">{{cust.name}}</li>
+            <br data-ng-repeat-end/>{{cust.city}}</br>
+            -->
+
+
+            <!-- NOTA: Si cambiamos elementos del array, ng-repeat elimina todos los elementos del DOM y los
+            vuelve a crear. Para evitar eso, podemos usar track by, al que le especificaremos una clave primaria.
+            Esto asocia cada elemento repetido del DOM con un objeto Javascript, de manera que, salvo que los
+            modifiquemos, angular no los tocará.
+
+            En nuestro ejemplo, si cada cliente tuviera un campo único id:
+
+            <li data-ng-repeat="cust in customers track by cust.id">{{cust.name}}</li>
+            -->
+
+            <!-- NOTA: Si se quiere aprovechar para explicar la opción ng-options aquí, se puede usar este
+            ejemplo sencillo: http://cursoangularjs.es/doku.php?id=unidades:04_masdirectivas:05_ngoptions
+            -->
+
+        </div>
+
+        <script src="scripts/jquery-1.12.1.min.js"></script>
+        <script src="scripts/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+        <script src="scripts/angular.min.js"></script>
+
+    </body>
+</html>

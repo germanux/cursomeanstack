@@ -1,0 +1,5 @@
+<h3>Listado de clientes</h3>
+<ul>
+    <li ng-repeat="customer in customers | orderBy:'name'">{{ customer.name | uppercase }} - {{ customer.city | lowercase }}</li>
+</ul>
+<br />
