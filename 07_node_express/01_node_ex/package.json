@@ -1,0 +1,8 @@
+{
+	"name": "01_node_ex",
+	"description": "Servidor web de prueba German",
+	"version" : "1.0.0",
+	"dependencies" : {
+		"express": "3.x"
+	}
+}
