@@ -7,3 +7,4 @@ app_curriculum/
 desktop.ini
 *.DS_Store
 07_node_express/01_node_ex/node_modules/
+07_node_express/02_node_ng/node_modules/

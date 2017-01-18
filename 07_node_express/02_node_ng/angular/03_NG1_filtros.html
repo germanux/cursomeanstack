@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Tercer ejemplo de AngularJS: Filtros</title>
-    </head>
+<html data-ng-app="">
 
-    <body>
-        <!-- Campo de texto para introducir nombre del cliente -->
-        Escribe el nombre del cliente aquí:
-        <br/>
-        <input type="text"/>
+<head>
+    <meta charset="utf-8">
+    <title>Tercer ejemplo de AngularJS: Filtros</title>
+</head>
 
-        <div class="container">
+<body data-ng-init="misClientes=[{nombre: 'Fran', ciudad: 'Vietmam/Cadiz'}, {nombre: 'Sergio', ciudad: 'Madrid'}, {nombre: 'Angel', ciudad: 'Madrid'}, {nombre: 'Julio', ciudad: 'Madrid'}, {nombre: 'Pedro', ciudad: 'Madrid'} ]; siEsPar = true">
+    <!-- Campo de texto para introducir nombre del cliente -->
+    Escribe el nombre del cliente aquí:
+    <br/>Por cualquiera: <input type="text" data-ng-model="miFiltro.$" />
+    <br/>Por nombre: <input type="text" data-ng-model="miFiltro.nombre" />
+    <br/>Por ciudad: <input type="text" data-ng-model="miFiltro.ciudad" />
+    <br/>Si es par: <input type="checkbox" data-ng-model="siEsPar" />
 
-            <h3>Listado de clientes</h3>
-            <ul>
-                <li></li>
-            </ul>
-        </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <div class="container">
 
-    </body>
+        <h3>Listado de clientes</h3>
+        <ul>
+            <li data-ng-repeat="cliente in misClientes | filter: miFiltro | orderBy: 'nombre'" data-ng-show="siEsPar == $odd">
+                Cliente num.: {{ $index + 1 }} es {{ cliente.nombre }} de {{ cliente.ciudad }}
+            </li>
+        </ul>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+</body>
+
 </html>

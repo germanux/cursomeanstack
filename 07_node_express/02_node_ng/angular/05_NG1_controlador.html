@@ -1,25 +1,54 @@
 <!DOCTYPE html>
 
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Quinto ejemplo de AngularJS: Separando el controlador</title>
-    </head>
+<html data-ng-app="miAplicacion">
 
-    <body>
-        Escribe el nombre del cliente aquí:
-        <br/>
-        <input type="text"/>
-        
-        <div>
-            
-            <h3>Listado de clientes</h3>            
-            <ul>    
-                <li></li>
-            </ul>
-          
-        </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-        
-    </body>
+<head>
+    <meta charset="utf-8">
+    <title>Quinto ejemplo de AngularJS: Separando el controlador</title>
+</head>
+
+<body>
+    Escribe el nombre del cliente aquí:
+    <br/>
+
+    <input type="text" data-ng-model="nombreCliente" />
+    <input type="text" data-ng-model="ciudadCliente" />
+
+    <div data-ng-controller="ControladorMuySimple">
+
+        <h3>Listado de clientes</h3>
+        <ul>
+            <li data-ng-repeat="cliente in misClientes">
+                {{ cliente.nombre | uppercase }} - {{ cliente.ciudad | lowercase }}
+            </li>
+        </ul>
+        {{ globalB }}
+        <input type="button" data-ng-click="addCliente()" value="addCliente()" />
+    </div>
+    <div data-ng-controller="ControladorMuySimple">
+
+        <h3>EEEEH! Listado de clientes segunda parte</h3>
+        <ul>
+            <li data-ng-repeat="cliente in misClientes">
+                {{ cliente.nombre }}
+            </li>
+        </ul>
+        <input type="button" data-ng-click="cambiarClienteFuera()" value="cambiarCliente()" />
+    </div>
+    <br>
+    <br>
+    <div data-ng-controller="UnControlDeAnimales">
+        <h3>Listado de clientes</h3>
+        <ul>
+            <li data-ng-repeat="animal in misAnimales">
+                {{ animal.nombre }}
+            </li>
+        </ul>
+        {{ globalA }}
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="05_miAplicacion.js"></script>
+
+</body>
+
 </html>

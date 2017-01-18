@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Segundo ejemplo de AngularJS: ng-init y ng-repeat</title>
-    </head>
+<html data-ng-app>
 
-    <body>
+<head>
+    <meta charset="utf-8">
+    <title>Segundo ejemplo de AngularJS: ng-init y ng-repeat</title>
+</head>
 
-        <div>
-            <h3>Bucle con ng-repeat</h3>
-            <ul>
-                <li></li>
-            </ul>
-        </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-    </body>
+<body>
+
+    <div data-ng-init="variosNombres=['Alfonso', 'Julio', 'Manue', 'Luis']">
+        <!-- Cambia el modelo cuando se pulsa -->
+        <input type="button" data-ng-click="variosNombres=['Solo uno']" value="Cambiar modelo" />
+        <!-- Cambia el modelo cuando se cambia el input  -->
+        <input type="text" data-ng-model="esteInput" data-ng-change="variosNombres=[esteInput, 'ELEMENTO 2']" />
+        <h3>Bucle con ng-repeat</h3>
+        <ul>
+            <!-- Recorre el array del modelo -->
+            <li data-ng-repeat="nombre in variosNombres">
+                {{ nombre + " no viene al bar."}}
+            </li>
+        </ul>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+</body>
+
 </html>
