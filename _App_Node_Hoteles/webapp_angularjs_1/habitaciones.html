@@ -1,0 +1,38 @@
+<html data-ng-app="habitaciones">
+
+<head>
+    <meta charset="utf-8">
+    <title>HabitacionesController ejemplo de AngularJS</title>
+    <link rel="stylesheet" href="scripts/bootstrap-3.3.6-dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <!-- Añadimos controlador en el div -->
+    <div data-ng-controller="HabitacionesController as HsC">
+        <h2>Habitaciones</h2>
+        <!-- Campo de texto para introducir datos de la habitación -->
+        <!-- Añadimos controlador en el div -->
+        <div data-ng-controller="HabitacionController as HC">
+            <!-- Campo de texto para introducir datos de la habitación -->
+            <input type="number" data-ng-model="HC.numero" value="1" />
+            <input type="checkbox" data-ng-model="HC.doble" value="false" />
+            <input type="button" value="+" ng-click="HC.addHabitacion()" />
+        </div>
+        <h3>Cantidad: {{ HsC.cantidad() }}</h3>
+        <ul>
+            <li data-ng-repeat="habitacion in HsC.lista">
+                Nº {{ habitacion.numero}}: {{ habitacion.doble ? "Doble" : "Simple"}}
+                <input type="button" value="X" ng-click="HsC.delHabitacion(habitacion.numero)" />
+            </li>
+        </ul>
+    </div>
+
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script src="js/modelo.js">
+</script>
+<script src="js/habitaciones.js">
+</script>
+
+</html>

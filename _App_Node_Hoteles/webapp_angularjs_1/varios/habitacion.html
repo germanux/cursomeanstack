@@ -1,0 +1,8 @@
+<!-- Añadimos controlador en el div -->
+<div class="container" data-ng-controller="HabitacionController as HabCtrl" data-ng-init="HabCtrl={numero, doble}">
+    <!-- Campo de texto para introducir datos de la habitación -->
+    <input type="number" data-ng-model="HabCtrl.numero" />
+    <input type="checkbox" data-ng-model="HabCtrl.doble" />
+    <input type="button" value="+" />
+    <input type="button" value="x" />
+</div>
