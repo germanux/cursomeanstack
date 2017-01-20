@@ -1,4 +1,6 @@
-var Modelo = {};
+if (typeof Modelo == "undefined") {
+    Modelo = {};
+}
 Modelo.Habitaciones = {
     lista: [],
     agregar: function(habitacion) {

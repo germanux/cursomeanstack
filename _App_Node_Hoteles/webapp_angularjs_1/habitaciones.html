@@ -1,4 +1,4 @@
-<html data-ng-app="habitaciones">
+<html data-ng-app="appNodeHotel">
 
 <head>
     <meta charset="utf-8">
@@ -10,15 +10,16 @@
     <!-- Añadimos controlador en el div -->
     <div data-ng-controller="HabitacionesController as HsC">
         <h2>Habitaciones</h2>
+        <h3>Cantidad: {{ HsC.cantidad() }}</h3>
         <!-- Campo de texto para introducir datos de la habitación -->
         <!-- Añadimos controlador en el div -->
         <div data-ng-controller="HabitacionController as HC">
             <!-- Campo de texto para introducir datos de la habitación -->
-            <input type="number" data-ng-model="HC.numero" value="1" />
-            <input type="checkbox" data-ng-model="HC.doble" value="false" />
+            Numero: <input type="number" data-ng-model="HC.numero" value="1" /></br>
+            ¿Doble?: <input type="checkbox" data-ng-model="HC.doble" value="false" />
             <input type="button" value="+" ng-click="HC.addHabitacion()" />
         </div>
-        <h3>Cantidad: {{ HsC.cantidad() }}</h3>
+
         <ul>
             <li data-ng-repeat="habitacion in HsC.lista">
                 Nº {{ habitacion.numero}}: {{ habitacion.doble ? "Doble" : "Simple"}}
