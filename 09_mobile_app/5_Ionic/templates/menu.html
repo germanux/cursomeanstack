@@ -1,0 +1,33 @@
+<ion-side-menus enable-menu-with-back-views="false" style="">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button></ion-nav-back-button>
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="side-menu21"></ion-nav-view>
+  </ion-side-menu-content>
+  <ion-side-menu side="left" id="side-menu21">
+    <ion-header-bar class="bar-stable">
+      <div class="title">Menu</div>
+    </ion-header-bar>
+    <ion-content padding="false" class="side-menu-left has-header ">
+      <ion-list id="menu-list1">
+        <ion-radio id="menu-radio1">Un boton radio</ion-radio>
+        <ion-item id="menu-list-item1" ui-sref="menu.home" menu-close="" style="">Home</ion-item>
+        <ion-item id="menu-list-item2" ui-sref="menu.cart" menu-close="" style="">Cart</ion-item>
+        <ion-item id="menu-list-item3" ui-sref="menu.cloud" menu-close="" style="">Cloud</ion-item>
+      </ion-list>
+      <a ui-sref="menu.cursoNodeJS" menu-close="" id="menu-button7" class="button button-balanced  button-block icon ion-android-arrow-down">Ir al curso Node!</a>
+      <div id="menu-button-bar1" class="button-bar">
+        <button id="menu-button4" class="button button-positive  button-block">1</button>
+        <button id="menu-button5" class="button button-positive  button-block">2</button>
+        <button id="menu-button6" class="button button-positive  button-block">3</button>
+      </div>
+      <div ng-init="videourl_video1=&quot;https://www.youtube.com/embed/lTLTs2ZA2JQ?rel=0&amp;showinfo=0&quot;" style="position:relative;overflow:hidden;padding-bottom:56.25%;height:0;" id="menu-video1">
+        <iframe src="{{videourl_video1}}" allowfullscreen="" style="position:absolute;top:0;left:0;width:100%;height:100%;" height="315" frameborder="0" width="560"></iframe>
+      </div>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>
