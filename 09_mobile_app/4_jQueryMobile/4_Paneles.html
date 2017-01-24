@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="jqm/jquery.mobile-1.4.5.css">
+	<link rel="stylesheet" href="themes/Personal.min.css">
+	<script src="jquery-1.11.2.js" type="text/javascript" charset="utf-8"></script>
+	<script src="jqm/jquery.mobile-1.4.5.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<div data-role="page" style="max-height:440px; min-height:440px;" class="type-home" class="ui-responsive-panel">
+		<div data-role="header">
+    		<h1>Panel Demo</h1>
+		</div>
+		<div role="main" class="ui-content">
+    		<p><strong>Left</strong> panel examples</p>
+			<a href="#leftpanel1" data-role="button" data-inline="true" data-mini="true">Reveal</a>
+			<a href="#leftpanel2" data-role="button" data-inline="true" data-mini="true">Push</a>
+			<a href="#leftpanel3" data-role="button" data-inline="true" data-mini="true">Overlay</a>
+
+			<p><strong>Right</strong> panel examples</p>
+			<a href="#rightpanel1" data-role="button" data-inline="true" data-mini="true">Reveal</a>
+			<a href="#rightpanel2" data-role="button" data-inline="true" data-mini="true">Push</a>
+			<a href="#rightpanel3" data-role="button" data-inline="true" data-mini="true">Overlay</a>
+		</div>
+
+		<!-- left  -->
+		<div data-role="panel" id="leftpanel1" data-position="left" data-display="reveal" data-dismissible="true" data-theme="a">
+			Texto a mostrar
+		</div>
+		<div data-role="panel" id="leftpanel2" data-position="left" data-display="push" data-dismissible="true" data-theme="a">
+			Texto a mostrar
+		</div>
+		<div data-role="panel" id="leftpanel3" data-position="left" data-display="overlay" data-dismissible="true" data-theme="a">
+			Texto a mostrar
+		</div>
+		<!-- right  -->
+		<div data-role="panel" id="rightpanel1" data-position="right" data-display="reveal" data-dismissible="true" data-theme="a">
+		</div>
+		<div data-role="panel" id="rightpanel2" data-position="right" data-display="push" data-dismissible="true" data-theme="a">
+		</div>
+		<div data-role="panel" id="rightpanel3" data-position="right" data-display="overlay" data-dismissible="true" data-theme="a">
+		</div>
+</body>
+</html>
+
+
+

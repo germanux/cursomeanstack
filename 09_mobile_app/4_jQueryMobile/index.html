@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="jqm/jquery.mobile-1.4.5.css">
+	<script src="jquery-1.11.2.js" type="text/javascript" charset="utf-8"></script>
+	<script src="jqm/jquery.mobile-1.4.5.js" type="text/javascript" charset="utf-8"></script>
+	
+</head>
+<body>
+	<div data-role="page" id="home">
+		<div data-role="header">
+			<h1>Titulo pagina</h1>
+			<p>descricpion</p>
+			<a href="#acercaDe" data-role="none" class="ui-btn-right">siguiente</a>
+			<a href="productos.html">anterior</a>
+			<a href="productos.html">anterior</a>
+		</div>
+		<div data-role="content">
+			<div class="content-primary">
+				<ol data-role="listview" data-split-icon="gear" data-filter="true">
+					<li data-role="list-divider">Divisor</li>
+					<li>
+						<a href="">
+							<img src="images/lampara_redonda.jpg" />
+							<h3>Broken Bells</h3>
+							<p>Broken Bells</p>
+							<p class="ui-li-aside"><strong>6:24</strong>PM</p>
+						</a>
+						<a href=""></a>
+					</li>
+					<li>item 2 </li>
+					<li>item 3 </li>
+				</ol>
+			</div>
+			<div class="content-secondary">
+				<a href="#acercaDe" data-role="button">Acerca de</a>
+				<a href="productos.html" data-role="button" data-transition="pop">Productos</a>
+				<a href="#dialogo" data-transition="pop" data-role="button" data-rel="dialog">dialogo</a>
+			</div>
+		</div>
+	</div>
+	<div data-role="page" id="acercaDe">
+		<a href="#home" data-role="button">Inicio</a>
+	</div>
+	<div data-role="page" id="dialogo">
+		<p>¿Desea borrar el registro?</p>
+		<a href="#home" data-role="button">Aceptar</a>
+		<a href="#home" data-role="button">Cancelar</a>		
+	</div>
+</body>
+</html>
+
+
+

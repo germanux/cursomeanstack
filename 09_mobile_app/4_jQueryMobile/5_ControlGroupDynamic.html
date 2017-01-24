@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="jqm/jquery.mobile-1.4.5.css">
+	<script src="jquery-1.11.2.js" type="text/javascript" charset="utf-8"></script>
+	<<script type="text/javascript">
+		var count = 0;
+		$(document).ready(function() {
+			$("#cargar").on("click", function(){
+				$("#ctrlGroup").append(crearInput(count));
+				$("#ctrlGroup").trigger('create');
+				count++;
+			});
+		});
+
+		function crearInput(count){
+			return '<input name="color" type="radio" id="c' + count + '"/><label for="c' + count + '">One</label>';
+		}
+	</script>
+	<script src="jqm/jquery.mobile-1.4.5.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<div data-role="page" id="home">
+		<a id="cargar">cargar</a>
+		<fieldset data-role="controlgroup" id="ctrlGroup">
+			<input type="text" data-role="date">
+		</fieldset>
+	</div>
+</body>
+</html>
+
+
+

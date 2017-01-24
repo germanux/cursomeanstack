@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="jqm/jquery.mobile-1.4.5.css">
+	<script src="jquery-1.11.2.js" type="text/javascript" charset="utf-8"></script>
+	<!-- El script siempre antes de cargar JQuery Mobile-->
+	<script type="text/javascript">
+		$(document).bind("mobileinit", function(){
+			//1-
+			//alert("Se cargo JQuery Mobile");
+			
+			//2-
+			//$.mobile.autoInitializePage = false; //Con false no se muestra la pagina
+
+			//3-
+			$.mobile.buttonMarkup.hoverDelay = 500; //Solo en movilidad
+
+			//4-
+			//alert("MediaQuery soprtadas: " + $.support.mediaquery);
+
+			//$.mobile.gradeA = function(){
+			//	return $.support.mediaquery && false; //Al retornar false, no se aplica el framework JQuery Mobile
+			//}
+
+			//alert("Navegador Valido: " + $.mobile.gradeA());
+
+			//5-
+			//$.mobile.hashListeningEnabled = false; //Deshabilita la interpretacion del ancla de la url
+			//La url "file:///D:/Dropbox/Contenido/Javascript/JQueryMobile/workspace/configuracion.html#contacto"
+			//no abre la pagina de contacto
+
+			//6-
+			//$.mobile.ignoreContentEnabled = true;//Se interpreta la etiqueta data-enhance, si es false, no se
+			//aplica el framework.
+
+			//7-
+			//$.mobile.linkBindingEnabled = false;//Los clicks no los gestiona JQuery Mobile
+			//$.mobile.hashListeningEnabled = false;
+
+			//8-
+			/*$.mobile.loadingMessageTextVisible = true;
+			$(document)
+				.on("click", "#cargarLoading", function() {
+					var opciones = {
+						theme:"a", 
+						text:"Please wait...", 
+						textonly:false, 
+						textVisible: true, 
+						html: '<div>cargando.....</div>'
+					};
+					$.mobile.loading('show', opciones);
+				})
+				.on("click", "#ocultarLoading", function() {
+					$.mobile.loading('hide');
+				});*/
+
+			//9-
+			/*$.mobile.getMaxScrollForTransition  = function(){
+				return 0; //A nada que haya algo de scroll no se aplican las transiciones
+			}*/
+
+			//10-
+			//$.mobile.keepNative = "[data-role='button']";
+
+			//11-
+			//$.mobile.maxTransitionWidth = false;
+
+			//12-
+			//$.mobile.ns = 'prueba-'; //Se necesita que los atributos tengan intercalada prueba-
+										//Por ejemplo <div data-prueba-role="page">
+
+			//13-
+			//$.mobile.pageLoadErrorMessage = "Error al acceder al recurso";
+
+			//14-
+			//$.mobile.pageLoadErrorMessageTheme = 'b';
+
+		});
+
+		 $(document).ready(function() {
+		 	//2-
+		 	//$.mobile.initializePage(); //La pagina no se muestra hasta que se invoca este método.
+		 });
+	</script>
+	<script src="jqm/jquery.mobile-1.4.5.js" type="text/javascript" charset="utf-8"></script>
+	
+</head>
+<body>
+
+	<div data-role="page" id="home" data-enhance=false>
+		pagina 1
+		<a href="#contacto" data-role="button">Contacto</a>
+	</div>
+	<div data-role="page" id="contacto">
+		<!--<div>
+			Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+			Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+			Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+		</div>-->
+		<a href="#home" data-role="button">Inicio</a>
+		<a data-role="button" id="cargarLoading">Cargar Loading</a>
+		<a data-role="button" id="ocultarLoading">Ocultar Loading</a>
+		<a href="no-existe.html" data-role="button">No existe el recurso</a>
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="jqm/jquery.mobile-1.4.5.css">
+	<script src="jquery-1.11.2.js" type="text/javascript" charset="utf-8"></script>
+	<<script type="text/javascript">
+		var count = 0;
+		$(document).ready(function() {
+			$("#cargar").on("click", function(){
+				$("#ctrlGroup").append(crearInput(count));
+				$("#ctrlGroup").trigger('create');
+				count++;
+			});
+		});
+
+		function crearInput(count){
+			return '<input name="color" type="radio" id="c' + count + '"/><label for="c' + count + '">One</label>';
+		}
+	</script>
+	<script src="jqm/jquery.mobile-1.4.5.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<div data-role="page" id="home">
+		<table data-role="table" data-mode="columntoggle" class="ui-responsive table-stripe">
+			<thead>
+				<tr>
+					<th data-priority="critical">id</th>
+					<th data-priority="2">titulo</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>El padrino</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>El padrino II</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
+
+
+

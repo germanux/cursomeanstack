@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="jqm/jquery.mobile-1.4.5.css">
+	<script src="jquery-1.11.2.js" type="text/javascript" charset="utf-8"></script>
+	<script src="jqm/jquery.mobile-1.4.5.js" type="text/javascript" charset="utf-8"></script>
+	<<script type="text/javascript">
+		$(document).ready(function(){
+			$.mobile.ignoreContentEnabled = true;
+			$("a").jqmEnhanceable()
+				.buttonMarkup({ corners: false })
+				.on("click", function(){
+					var content = "<div><a href='http://en.wikipedia.org/wiki/Sydney' data-role='button'>Sydney</a></div>";
+					$(content).appendTo("#page-content").enhanceWithin();
+				});
+		});
+	</script>
+</head>
+<body>
+	<div data-role="page" id="home">
+		<div role="main" class="ui-content" id="page-content">
+			<a href="#dialogo" data-enhance="false">Sin estilo jquery mobile</a>
+			<a href="#dialogo">con estilo jquery mobile</a>
+		</div>
+	</div>
+</body>
+</html>
+
+
+

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="jqm/jquery.mobile-1.4.5.css">
+	<script src="jquery-1.11.2.js" type="text/javascript" charset="utf-8"></script>
+	<!-- El script siempre antes de cargar JQuery Mobile-->
+	<script type="text/javascript">
+		/*document).bind("mobileinit", function(){
+			$.mobile.linkBindingEnabled = false;
+		});*/
+
+		$(window).on("hashchange",function(event) {
+			console.log("Cambio el hash: " + location.hash);
+		});
+
+		$(window).trigger('hashchange');
+	</script>
+	<!--script src="jqm/jquery.mobile-1.4.5.js" type="text/javascript" charset="utf-8"></script-->
+</head>
+<body>
+	<div id="home">
+		<a href="#test1" >test 1</a>
+		<a href="#test2" >test 2</a>
+		<a href="#test3" >test 3</a>
+		<a href="#test4" >test 4</a>
+	</p>
+</body>
+</html>

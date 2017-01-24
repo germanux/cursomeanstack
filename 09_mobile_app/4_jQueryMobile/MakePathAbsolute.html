@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery.mobile.path.makePathAbsolute demo</title>
+  <link rel="stylesheet" href="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <style>
+  #myResult{
+    border: 1px solid;
+    border-color: #108040;
+    padding: 10px;
+    }
+  </style>
+</head>
+<body>
+ 
+  <div role="main" class="ui-content">
+    <input type="button" value="file.html relative to /a/b/c/bar.html" class="myButton" data-inline="true">
+    <input type="button" value="../../file.html relative to /a/b/c/bar.html" class="myButton" data-inline="true">
+    <div id="myResult">The result will be displayed here</div>
+  </div>
+<script>
+$(document).ready(function() {
+ 
+  $( ".myButton" ).on( "click", function() {
+ 
+    var arguments = $( this ).attr( "value" ).split( " relative to " ),
+    absolutePath = $.mobile.path.makePathAbsolute( arguments[ 0 ], arguments[ 1 ] );
+ 
+  $( "#myResult" ).text( absolutePath );
+  })
+});
+</script>
+ 
+</body>
+</html>

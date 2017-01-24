@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+	<link rel="stylesheet" href="jqm/jquery.mobile-1.4.5.css">
+	<script src="jquery-1.11.2.js" type="text/javascript" charset="utf-8"></script>
+	<script src="jqm/jquery.mobile-1.4.5.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		$(document).ready(function() {
+			$("[data-role='panel']").panel().enhanceWithin();
+			$("[data-role='header'").toolbar();
+
+			$("#btAlta").on("click",function(){
+				addItem({
+					"titulo": $("#formularioAlta fieldset input#titulo").val(),
+					"autor": $("#formularioAlta fieldset input#autor").val(),
+					"fecha": $("#formularioAlta fieldset input#fecha").val(),
+					toListItem: function(){
+						return '<li><a href="#detalle" data-role="button">' +
+						'<img src="images/caratula.jpg"/>' +
+						'<h1>' + this.titulo + '</h1>' +
+						'<span class="ui-li-aside">' + this.fecha + '</span>' +
+						'</a></li>';
+					}
+				})
+			});
+		});
+
+		$(document).on("pagebeforeshow", "#home", function(){
+			$("li a[data-role='button']").on("click", function(event){
+				var id = $(this).attr("id");
+				var name = $(this).attr('data-name');
+				//$.mobile.changePage("detalle.html", { data : { 'id' : id }});
+				//$.mobile.pageContainer.pagecontainer("change", "detalle.html", { data : { 'id' : id }});
+				//$(":mobile-pagecontainer").pagecontainer("change", "detalle.html", { data : { 'id' : id }});
+				$(":mobile-pagecontainer").pagecontainer("change", "#detalle", { dataUrl : "#detalle?id=1"});
+			});
+		});
+
+		$(document).on("pagebeforeshow", "#detalle", function(){
+			//var parameters = $(this).data("url").split("?")[1];
+       		//alert("id: " + parameters.split("=")[1]);
+		});
+
+		function addItem(pelicula){
+			$('[data-role="listview"]')
+				.append(pelicula.toListItem())
+				.listview('refresh');
+		}
+
+
+	</script>
+</head>
+<body>
+	<div data-role="panel" data-display="overlay" id="panelControl" data-theme="a">
+		<div data-role="collapsible-set">
+			<div data-role="collapsible" id="formularioAlta">
+				<h1>Alta</h1>
+				<fieldset>
+					<legend>Formulario de alta de un nuevo libro</legend>
+					<input type="text" id="titulo" value="" placeholder="titulo"/>
+					<input type="text" id="autor" value="" placeholder="autor"/>
+					<input type="date" id="fecha" value="" placeholder="fecha"/>
+					<input type="button" id="btAlta" value="Alta"/>
+				</fieldset>
+			</div>
+			<div data-role="collapsible">
+				<h1>Busqueda</h1>
+				<fieldset>
+					<legend>Formulario de busqueda de libros</legend>
+					<input type="search" id="campoBusqueda" value=""/>
+					<input type="button" id="btBuscar" value="Buscar"/>
+				</fieldset>
+			</div>
+		</div>			
+	</div> <!-- Panel -->
+	
+	<div data-role="header" data-theme="a">
+		<a href="#panelControl" data-role="button" data-icon="gear" data-iconpos="notext">Panel</a>
+		<h1>Biblioteca</h1>
+	</div><!-- Header -->
+
+	<div data-role="page" id="home">
+		<div data-role="content">
+			<ul data-role="listview">
+				<li>
+					<a data-role="button" id="item-1" data-name="item-1">
+						<img src="images/caratula.jpg"/>
+						<h1>Titulo</h1>
+						<span class="ui-li-aside">17-03-2015</span>
+					</a>
+				</li>
+				<li>
+					<a data-role="button" id="item-2">
+						<img src="images/caratula.jpg"/>
+						<h1>Titulo</h1>
+						<span class="ui-li-aside">17-03-2015</span>
+					</a>
+				</li>
+				<li>
+					<a data-role="button" id="item-3">
+						<img src="images/caratula.jpg"/>
+						<h1>Titulo</h1>
+						<span class="ui-li-aside">17-03-2015</span>
+					</a>
+				</li>
+			</ul>
+
+			
+		</div>
+	</div><!-- Pagina Home -->
+
+	<div data-role="page" data-dialog="true" id="detalle">
+		<div data-role="content">
+			<fieldset>
+				<input type="text" id="titulo" value="" placeholder="titulo" disabled="" />
+				<input type="text" id="autor" value="" placeholder="autor" disabled=""/>
+				<input type="date" id="fecha" value="" placeholder="fecha" disabled=""/>
+				<a href="#home" data-role="button" data-rel="back">Volver</a>
+			</fieldset>
+		</div>
+	</div><!-- Pagina Detalle -->
+</body>
+</html>
+
+
+

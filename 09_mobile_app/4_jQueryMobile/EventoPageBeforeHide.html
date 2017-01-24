@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="jqm/jquery.mobile-1.4.5.css">
+	<script src="jquery-1.11.2.js" type="text/javascript" charset="utf-8"></script>
+	<!-- El script siempre antes de cargar JQuery Mobile-->
+	<script>
+		$(document).on('pagebeforeshow','#contacto',function(){
+			$(document).on('click','#btInicio',function(){
+				$.mobile.loadPage("#home", {type:"post"});
+			});
+		});
+		$(document).on('pagebeforecreate','[data-role="page"]',function(){
+			console&&console.log($(this).attr('id')+" - pagebeforecreate!!");
+		});
+		$(document).on('pagecreate','[data-role="page"]',function(){
+			console&&console.log($(this).attr('id')+" - pagecreate!!");
+		});
+		$(document).on('pageinit','[data-role="page"]',function(){
+			console&&console.log($(this).attr('id')+" - pageinit!!");
+		});
+		$(document).on("pagebeforechange",function(e,data){
+			console&&console.log("pagebeforechange!!");
+		});
+		$(document).on('pagechange',function(e,data){
+			console&&console.log("pagechange!!");
+		});
+		$(document).on('pagebeforehide','[data-role="page"]',function(){
+			console&&console.log($(this).attr('id')+" - pagebeforehide!!");
+		})
+		;$(document).on('pageremove','[data-role="page"]',function(){
+			console&&console.log($(this).attr('id')+" - pageremove!!");
+		});
+		$(document).on('pagehide','[data-role="page"]',function(){
+			console&&console.log($(this).attr('id')+" - pagehide!!");
+		});
+		$(document).on('pagebeforeshow','[data-role="page"]',function(){
+			console&&console.log($(this).attr('id')+" - pagebeforeshow!!");
+		});
+		$(document).on('pageshow','[data-role="page"]',function(){
+			console&&console.log($(this).attr('id')+" - pageshow!!");
+		});
+		$(document).on('pagebeforeload',function(){
+			console&&console.log("pagebeforeload!!");
+		});
+		$(document).on('pageload',function(){
+			console&&console.log("pageload!!");
+		});
+		$(document).ready(function(){
+			console&&console.log("document ready!!");
+		});
+	</script>
+
+	<script src="jqm/jquery.mobile-1.4.5.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<div data-role="page" id="home">
+		<a href="#contacto" data-role="button">Contacto</a>
+	</div>
+	<div data-role="page" id="contacto">
+		<a href="#home" data-role="button">Inicio</a>
+		<button type="button" id="btInicio" data-role="button" value="Inicio-Load" />
+	</div>
+</body>
+</html>

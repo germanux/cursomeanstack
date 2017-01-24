@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="jqm/jquery.mobile-1.4.5.css">
+	<script src="jquery-1.11.2.js" type="text/javascript" charset="utf-8"></script>
+	<script src="jqm/jquery.mobile-1.4.5.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		$(function() {
+			//$( "[data-role='navbar']" ).navbar();
+			$( "[data-role='header'], [data-role='footer']" ).toolbar({
+  				addBackBtn: true,
+  				updatePagePadding: true
+			});
+		});
+		// Update the contents of the toolbars
+		/*$( document ).on( "pagecontainerchange", function() {
+			var current = $( ".ui-page-active" ).jqmData( "title" );
+			// Change the heading
+			$( "[data-role='header'] h1" ).text( current );
+			// Remove active class from nav buttons
+			$( "[data-role='navbar'] a.ui-btn-active" ).removeClass( "ui-btn-active" );
+			// Add active class to current nav button
+			$( "[data-role='navbar'] a" ).each(function() {
+				if ( $( this ).text() === current ) {
+					$( this ).addClass( "ui-btn-active" );
+				}
+			});
+		});*/
+	</script>
+</head>
+<body>
+	<div data-role="header" data-position="fixed" data-theme="a">
+		<h1>Cabecera para todos</h1>
+	</div>
+
+	<div data-role="page" id="home" data-title="Home">
+		home
+	</div>
+	<div data-role="page" id="contenido" data-title="Contenido">
+		contenido
+	</div>
+	<div data-role="page" id="acercade" data-title="Acerca De">
+		acercade
+	</div>
+
+	<div data-role="footer" data-position="fixed" data-theme="a">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#home" data-prefetch="true" data-transition="fade">Home</a></li>
+				<li><a href="#contenido" data-prefetch="true" data-transition="flip">Contenido</a></li>
+				<li><a href="#acercade" data-prefetch="true" data-transition="turn">Acerca De</a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
