@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="jqm/jquery.mobile-1.4.5.css">
+    <script src="jquery-1.11.2.js" type="text/javascript" charset="utf-8"></script>
+    <script src="jqm/jquery.mobile-1.4.5.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+    <div data-role="page" data-theme="a" id="principal">
+        <header data-role="header">
+            <h1>Cabecera</h1>
+        </header>
+        <div data-role="content">
+            <p>Contenido PRINCIPAL</p>
+            <div data-role="controlgroup" data-type="horizontal">
+                <a href="#principal" data-role="button">principal</a>
+                <a href="#productos" data-role="button" data-transition="fade">productos</a>
+                <a href="#contacto" data-role="button" data-transition="flip"> contacto</a>
+            </div>
+        </div>
+        <footer data-role="footer">
+            <h4>Pie de pagina</h4>
+        </footer>
+    </div>
+    <div data-role="page" data-theme="a" id="productos">
+        <header data-role="header" data-add-back-btn="true">
+            <h1>Cabecera productos</h1>
+        </header>
+        <div data-role="content">
+            <p>Contenido productos</p>
+            <p><a href="#principal" data-role="button" data-transition="slideup">Contenido principal</a></p>
+            <p><a href="#productos" data-role="button">Contenido productos</a></p>
+            <p><a href="#contacto" data-role="button">Contenido contacto</a></p>
+        </div>
+        <footer data-role="footer">
+            <h4>Pie de pagina</h4>
+        </footer>
+    </div>
+    <div data-role="page" data-theme="b" id="contacto">
+        <header data-role="header" data-add-back-btn="true">
+            <h1>Cabecera contacto</h1>
+        </header>
+        <div data-role="content">
+            <p>Contenido contacto</p>
+            <p><a href="#principal" data-role="button">Contenido principal</a></p>
+            <p><a href="#productos" data-role="button">Contenido productos</a></p>
+            <p><a href="#contacto" data-role="button">Contenido contacto</a></p>
+        </div>
+        <footer data-role="footer">
+            <h4>Pie de pagina</h4>
+        </footer>
+    </div>
+</body>
+
+</html>
