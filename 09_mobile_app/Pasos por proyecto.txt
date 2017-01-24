@@ -1,0 +1,20 @@
+Para crear proyecto
+	cordova create "DirectorioProyecto" "com.empresa.idapp" "Nombre del proyecto"
+	
+Añadir plataforma
+	cordova platforms add android
+
+Añadir plugin
+	cordova pluggin add cordova-plugin-nombre-plugin
+
+p.ejem.  cordova pluggin add cordova-plugin-device-motion
+
+Para compilar
+	cordova build
+
+Para emular
+	cordova emulate
+
+Para ejecutar en dispositivo móvil real
+	cordova run
+
