@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,60 +19,75 @@
     <![endif]-->
     <link rel="stylesheet" href="css/estilos-grid.css">
 </head>
-<body>
-    <div>
-        <h1>Ejemplos de GRID</h1>
 
+<body>
+    <div class="container">
+        <h1>Ejemplos de GRID</h1>
+        <!--
         <h2>Columna de tamaño 12</h2>
 
-        <div>
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
+        <div class="row">
+            <div class="col-xs-12">Todo el ancho 1</div>
+            <div class="col-xs-12">Todo el ancho 2</div>
+            <div class="col-xs-12">Todo el ancho 3</div>
+            <div class="col-xs-12">Todo el ancho 4</div>
         </div>
 
         <h2>Columna de tamaño 6</h2>
 
-        <div>
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
+        <div class="row">
+            <div class="col-xs-6">Medio ancho 1</div>
+            <div class="col-xs-6">>Medio ancho 2</div>
+            <div class="col-xs-6">>Medio ancho 3</div>
+            <div class="col-xs-6">>Medio ancho 4</div>
         </div>
 
         <h2>Columna de tamaño 4</h2>
 
-        <div>
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
+        <div class="row">
+            <div class="col-xs-4">Ancho un tercio 1</div>
+            <div class="col-xs-4">Ancho un tercio 2</div>
+            <div class="col-xs-4">Ancho un tercio 3</div>
+            <div class="col-xs-4">Ancho un tercio 4</div>
+            <div class="col-xs-6">Medio ancho 4</div>
         </div>
 
         <h2>Columna de tamaño 3</h2>
 
-        <div>
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
+        <div class="row">
+            <div class="col-xs-3">1</div>
+            <div class="col-xs-3">2</div>
+            <div class="col-xs-3">3</div>
+            <div class="col-xs-3">4</div>
         </div>
 
-        <h2>En multidispositivo</h2>
+        <h2>Columna de tamaños diferentes según el ancho de pantalla, multidispositivo</h2>
 
-        <div>
-            <div>1 - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus magni, incidunt natus perferendis similique totam atque, nesciunt nam nobis</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus magni, incidunt natus perferendis similique totam atque, nesciunt nam nobis</div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">Columnas 2</div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">Columnas 3</div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">Columnas 4</div>
         </div>
 
+        <h2>Multidispositivo con clearfix</h2>
+
+        <div class="row">
+            <div class="clearfix visible-sm-block"></div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus magni, incidunt natus perferendis similique totam atque, nesciunt nam nobis</div>
+            <div class="clearfix visible-sm-block"></div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">Columnas 2</div>
+            <div class="clearfix visible-sm-block"></div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">Columnas 3</div>
+            <div class="clearfix visible-sm-block"></div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">Columnas 4</div>
+        </div>
+-->
         <h2>Huecos con offset</h2>
 
-        <div>
-            <div>.col-md-4</div>
-            <div>.col-md-4 .col-md-offset-4</div>
+        <div class="row">
+            <div class="col-md-4">.col-md-4</div>
+            <div class="col-md-4 col-md-offset-2">.col-md-4 .col-md-offset-4</div>
         </div>
 
         <div>
