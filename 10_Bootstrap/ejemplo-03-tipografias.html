@@ -18,8 +18,9 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
+
 <body>
-    <div>
+    <div class="container">
         <h1>Ejemplos tipografia pastie.org/10950993</h1>
 
         <h2>Cabeceras</h2>
@@ -33,12 +34,14 @@
 
         <h2>Parrafos</h2>
 
-        <p>Parrafo con .lead</p>
-        <br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt delectus ipsum odio sapiente perspiciatis dolores provident ex possimus totam nisi, a, cum unde deserunt quod beatae cupiditate doloribus aperiam. Quod.
+        <p class="lead">Parrafo con .lead
+            <br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt delectus ipsum odio sapiente perspiciatis dolores provident ex possimus totam nisi, a, cum unde deserunt quod beatae cupiditate doloribus aperiam. Quod.
+        </p>
         <p>Párrafo normal</p>
         <br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id labore, officiis, doloremque nisi tempore cupiditate iure quam maxime at similique placeat, voluptatibus nesciunt adipisci necessitatibus esse nam voluptas blanditiis explicabo.
-        <p>Parrafo con .small</p>
-        <br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id labore, officiis, doloremque nisi tempore cupiditate iure quam maxime at similique placeat, voluptatibus nesciunt adipisci necessitatibus esse nam voluptas blanditiis explicabo.
+        <p class="small">Parrafo con .small
+            <br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id labore, officiis, doloremque nisi tempore cupiditate iure quam maxime at similique placeat, voluptatibus nesciunt adipisci necessitatibus esse nam voluptas blanditiis explicabo.
+        </p>
 
         <h2>Textos en línea</h2>
 
@@ -48,23 +51,24 @@
         <p>Otra forma de dar <ins>importancia</ins> con ins al texto</p>
         <p>Otra forma de dar <del>importancia</del> con del al texto</p>
 
+
         <h2>ALINEACIÓN DE TEXTOS</h2>
 
-        <p>Texto alineado a la izquierda.</p>
-        <p>Texto centrado.</p>
-        <p>Texto alineado a la derecha.</p>
-        <p>Texto justificado. Texto justificado. Texto justificado. Texto justificado. Texto justificado. Texto justificado. Texto justificado. Texto justificado. Texto justificado. Texto justificado. Texto justificado. </p>
-        <p>Texto sin ajuste. Texto sin ajuste. Texto sin ajuste. Texto sin ajuste. Texto sin ajuste. Texto sin ajuste. Texto sin ajuste. Texto sin ajuste. Texto sin ajuste. Texto sin ajuste. Texto sin ajuste. Texto sin ajuste. Texto sin ajuste. </p>
+        <p class="text-left">Texto alineado a la izquierda.</p>
+        <p class="text-center">Texto centrado.</p>
+        <p class="text-right">Texto alineado a la derecha.</p>
+        <p class="text-justify">Texto justificado. Texto justificado. Texto justificado. Texto justificado. Texto justificado. Texto justificado. Texto justificado. Texto justificado. Texto justificado. Texto justificado. Texto justificado. </p>
+        <p class="text-nowrap">Texto sin ajuste. Texto sin ajuste. Texto sin ajuste. Texto sin ajuste. Texto sin ajuste. Texto sin ajuste. Texto sin ajuste. Texto sin ajuste. Texto sin ajuste. Texto sin ajuste. Texto sin ajuste. Texto sin ajuste. Texto sin ajuste. </p>
 
         <h2>CAPITALIZACIÓN</h2>
 
-        <p>Texto en minúsculas</p>
-        <p>Texto en mayúsculas</p>
-        <p>Texto tipo título</p>
-
+        <p class="text-lowercase">Texto en minúsculas</p>
+        <p class="text-uppercase">Texto en mayúsculas</p>
+        <p class="text-capitalize">Texto tipo título</p>
         <h2>ABREVITURAS</h2>
 
         <abbr title="HyperText Markup Language">HTML</abbr> es una abreviatura. Pasa el ratón por encima para averiguar de que se trata.
+
 
         <h2>DIRECCIONES</h2>
 
@@ -79,7 +83,6 @@
         <strong>Full Name</strong><br>
         <a href="mailto:#">first.last@example.com</a>
       </address>
-
         <h2>CITAS</h2>
 
         <blockquote>
@@ -89,7 +92,11 @@
 
         <h2>LISTAS</h2>
 
-        <ul>
+        <ul class="list-inline">
+            <li>Peras</li>
+            <li>Manzanas</li>
+            <li>Naranjas</li>
+            <li>Platanos</li>
             <li>Peras</li>
             <li>Manzanas</li>
             <li>Naranjas</li>
@@ -98,7 +105,7 @@
 
         <h2>DESCRIPCIONES</h2>
 
-        <dl>
+        <dl class="dl-horizontal">
             <dt>Descripción</dt>
             <dd>Perfecta para definir términos.</dd>
             <dt>Euismod</dt>

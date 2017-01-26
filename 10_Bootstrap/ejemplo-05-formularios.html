@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
- 
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,7 +23,7 @@
     <div>
 
         <h1>Ejemplos de formularios</h1>
-
+        <!--
         <h2>Ejemplo básico</h2>
 
         <form role="form">
@@ -33,19 +33,103 @@
             </div>
             <div>
                 <label for="password">Contraseña</label>
-                <input type="password" id="password" placeholder="Contraseña" pattern="[0-9]{7,8}[a-zA-Z]" />
+                <input type="password" class="form-control" id="password" placeholder="Contraseña" pattern="[0-9]{7,8}[a-zA-Z]" />
             </div>
             <div class="checkbox">
                 <label>
                 <input type="checkbox"/>Recordarme
             </label>
             </div>
-            <button type="submit">Entrar</button>
+            <button type="submit" class="btn btn-default">Entrar</button>
         </form>
 
+        <h2>Formulario .form-inline</h2>
 
+        <form role="form" class="form-inline">
+            <div>
+                <label for="correo_electronico">Correo Electrónico</label>
+                <input type="email" class="form-control" id="correo_electronico" placeholder="Introduzca email" />
+            </div>
+            <div>
+                <label for="password">Contraseña</label>
+                <input type="password" class="form-control" id="password" placeholder="Contraseña" pattern="[0-9]{7,8}[a-zA-Z]" />
+            </div>
+            <div class="checkbox">
+                <label>
+                <input type="checkbox"/>Recordarme
+            </label>
+            </div>
+            <button type="submit" class="btn btn-default">Entrar</button>
+        </form>
+        <h2> Checkboxs y radiobuttons</h2>
 
-    </div>
+        <div class="checkbox-inline">
+            <label>
+                <input type="checkbox" value="check1" checked/>
+                marcado
+            </label>
+        </div>
+        <div class="checkbox-inline disabled">
+            <label>
+                <input type="checkbox" value="check2" disabled/>
+                deshabilitado
+            </label>
+        </div>
+
+        <div class="radio-inline">
+            <label>
+                <input type="radio" value="radio1" checked/>
+                marcado
+            </label>
+        </div>
+        <div class="radio-inline disabled">
+            <label>
+                <input type="radio" value="radio2" disabled/>
+                deshabilitado
+            </label>
+        </div>
+-->
+
+        <h2>Validaciones</h2>
+        <div class="form-group has-success has-feedback">
+            <label class="control-label" for="entradaCorrecta">Entrada correcta</label>
+            <input type="text" class="form-control" id="entradaCorrecta" />
+            <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+        </div>
+
+        <div class="form-group has-warning has-feedback">
+            <label class="control-label" for="entradaCorrecta">Entrada con aviso</label>
+            <input type="text" class="form-control" id="entradaCorrecta" />
+            <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+        </div>
+
+        <div class="form-group has-error has-feedback">
+            <label class="control-label" for="entradaCorrecta">Entrada con error</label>
+            <input type="text" class="form-control" id="entradaCorrecta" />
+            <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+        </div>
+
+        <h2>Inputs con diferentes tamaños</h2>
+
+        <input class="form-control input-lg" type="text" placeholder=".input-lg" />
+        <input class="form-control" type="text" placeholder="por defecto" />
+        <input class="form-control input-sm" type="text" placeholder=".input-sm" />
+
+        <form class="form-horizontal" role="form">
+            <div class="form-group form-group-lg">
+                <label class="col-sm-2 control-label" for="campo_lg">Campo LG</label>
+                <div class="col-sm-10">
+                    <input id="campo_lg" class="form-control" type="text" placeholder="Campo grande" />
+                </div>
+            </div>
+
+            <div class="form-group form-group-sm">
+                <label class="col-sm-2 control-label" for="campo_sm">Campo LG</label>
+                <div class="col-sm-10">
+                    <input id="campo_sm" class="form-control" type="text" placeholder="Campo pequeño" />
+                </div>
+            </div>
+        </form>
 </body>
 
 </html>
