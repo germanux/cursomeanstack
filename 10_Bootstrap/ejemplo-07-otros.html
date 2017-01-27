@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap Base</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-datetimepicker.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+		<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+			<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
+			<script src="js/bootstrap-datetimepicker.js"></script>
+</head>
+
+<body>
+    <div>
+        <h1>Ejemplos de imagenes</h1>
+
+			 <img src="img/gato-muere1.jpg">
+
+        <br/>
+		<div>
+			<h1>Ejemplos de jumbotron</h1>    
+		</div>
+		
+        <br/>
+		<div>
+		  <strong>Realizado</strong> Indica una acción positiva o que Sergio a venido de buen humor.
+		</div>
+
+		<div>
+		  <strong>¡Info!</strong> Indica un cambio o acción informativa de que Emilio está muy atento.
+		</div>
+
+		<div>
+		  <strong>¡Atención!</strong> Indica una advertencia o que a Julio hay algo que no le queda claro.
+
+		</div>
+		<div>
+		  <strong>¡Peligro!</strong> Indica una acción peligrosa o que Edgar alias "El colombiano" trae un paquete sospechoso.
+		</div>
+		</div>
+		
+        <h1>Ejemplos de iconos</h1>
+
+		<button type="button" >
+			<span ></span> Buscar
+		</button>
+		</p>
+		<p>Icono "buscar" como botón:
+		<button type="button">
+			<span></span> Buscar
+		</button>
+		</p>
+		<p>Icono imprimir: <span ></span></p>      
+		<p>Icono imprimir como botón:
+		<a href="#" >
+			<span ></span> Imprimir 
+		</a>
+		</p> 
+		<a href="http://www.w3schools.com/bootstrap/bootstrap_ref_comp_glyphs.asp" class="btn btn-success btn-lg">
+			<span class="glyphicon glyphicon-plus"></span> Ver más 
+		</a>
+		
+		
+	  <h2>Barra de progreso</h2>
+	  <div >
+		<div  role="progressbar" >
+		  <span >60% Complete</span>
+		</div>
+	  </div>
+	  
+	  <h2>Otras Barras de progreso: progress-bar-warning, progress-bar-alert</h2>
+	  
+	  
+	  <h2>Calendarios</h2>
+	  <div class="container">
+		<div class="row">
+			<div class='col-sm-6'>
+				<div class="form-group">
+					<div class='input-group date' id='datetimepicker1'>
+						<input type='text' class="form-control" />
+						<span class="input-group-addon">
+							<span class="glyphicon glyphicon-calendar"></span>
+						</span>
+					</div>
+				</div>
+			</div>
+			<script type="text/javascript">
+				$(function () {
+					$('#datetimepicker1').datetimepicker();
+				});
+			</script>
+		</div>
+		</div>
+		
+		<div class="container">
+		<div class='col-md-5'>
+			<div class="form-group">
+				<div class='input-group date' id='datetimepicker6'>
+					<input type='text' class="form-control" />
+					<span class="input-group-addon">
+						<span class="glyphicon glyphicon-calendar"></span>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class='col-md-5'>
+			<div class="form-group">
+				<div class='input-group date' id='datetimepicker7'>
+					<input type='text' class="form-control" />
+					<span class="input-group-addon">
+						<span class="glyphicon glyphicon-calendar"></span>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(function () {
+			$('#datetimepicker6').datetimepicker();
+			$('#datetimepicker7').datetimepicker({
+				useCurrent: false //Important! See issue #1075
+			});
+			$("#datetimepicker6").on("dp.change", function (e) {
+				$('#datetimepicker7').data("DateTimePicker").minDate(e.date);
+			});
+			$("#datetimepicker7").on("dp.change", function (e) {
+				$('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
+			});
+		});
+	</script>
+	
+	
+		<a href="https://eonasdan.github.io/bootstrap-datetimepicker/" class="btn btn-success btn-lg">
+			<span class="glyphicon glyphicon-plus"></span> Ver calendarios 
+		</a>
+</body>
+
+</html>
