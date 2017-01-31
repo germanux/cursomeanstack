@@ -1,12 +1,15 @@
-fs.readdir(directorio, (error, ficheros) => {
+"use strict";
+let moduloDeFiltrado = require("./06-listar_ficheros_module.js")
+let directorio = process.argv[2]; // path del directorio
+let extension = process.argv[3]; // extension a buscar
+
+function queHacerCuandoDevuelvaLosFicheros(error, arrayDeFicheros) {
     if (error) {
-        console.error("Que ha pasado?:  " + error);
+        console.error("Error al listar", error);
     } else {
-        console.log("Listar con funciones normales");
-        ficheros.forEach((fichero) => {
-            if (path.extname(fichero) == extension) {
-                console.log("Mostrando normal: " + fichero);
-            }
-        });
+        arrayDeFicheros.forEach((fichero) => {
+            console.log("Fichero: " + fichero);
+        })
     }
-});
+}
+moduloDeFiltrado(directorio, extension, queHacerCuandoDevuelvaLosFicheros)
