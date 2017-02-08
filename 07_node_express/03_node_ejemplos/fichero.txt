@@ -1,0 +1,10 @@
+Usar la entrada estándar process.stdin
+ Comenzamos con la configuración de la entrada de datos por consola.
+process.stdin.setEncoding('utf8');
+Luego podemos mostrar un mensaje en la consola para que se sepa qué dato se está solicitando al usuario.
+process.stdout.write('mensaje por salida stdout');
+
+Stream de escritura process.stdout
+Para hacer alguna cosa con streams de tipo de escritura vamos a basarnos en una propiedad del objeto global process de Node, llamada stdout.
+No es más que un stream de escritura con el que podemos generar salida en nuestro programa.
+La salida de stdout es la salida estándar de NodeJS, la propia consola.
