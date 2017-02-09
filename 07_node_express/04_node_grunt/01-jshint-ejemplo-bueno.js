@@ -1,3 +1,5 @@
+/* dfgsdfgdg
+*/ 
 /*jshint strict:false */
 /* jshint node: true */
 "use strict";
@@ -10,13 +12,13 @@ var memKb = {
     heapUsed: parseInt(mem.heapUsed / 1024),
     external: parseInt(mem.external / 1024),
 };
-
+primeraFuncion(asdf);
 function primeraFuncion() {
     console.log(memKb);
     // process.exit(1);
     process.chdir("../");
 }
-
+ 
 function segundaFuncion() {
     console.log(process.cwd());
     // Información del entorno de usario

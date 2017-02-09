@@ -17,3 +17,4 @@ plugins/
 *.odt#
 *.wt
 *.~lock.*
+node_modules/

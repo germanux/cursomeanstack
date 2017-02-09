@@ -1,0 +1,13 @@
+{
+  "name": "03-grunt-prueba",
+  "description": "Prueba de Grung.js",
+  "version": "1.0.0",
+  "author": "Germ�n Caballero",
+  "license": "GPL",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-uglify": "^2.1.0",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}

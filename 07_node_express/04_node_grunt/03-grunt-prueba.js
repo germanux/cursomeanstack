@@ -2,7 +2,7 @@
  * jQuery Migrate - v1.2.1 - 2013-05-08
  * https://github.com/jquery/jquery-migrate
  * Copyright 2005, 2013 jQuery Foundation, Inc. and other contributors; Licensed MIT
- */
+ */ 
 (function( jQuery, window, undefined ) {
 // See http://bugs.jquery.com/ticket/13335
 // "use strict";
@@ -10,7 +10,7 @@
 var warnedAbout = {};
 // List of warnings already given; public read only
 jQuery.migrateWarnings = [];
-
+ 
 // Set to true to prevent console output; migrateWarnings still maintained
 // jQuery.migrateMute = false;
 
