@@ -16,3 +16,4 @@ plugins/
 09_mobile_app/4_jQueryMobile/Biblioteca/
 *.odt#
 *.wt
+*.~lock.*
