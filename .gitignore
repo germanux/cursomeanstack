@@ -18,3 +18,4 @@ plugins/
 *.wt
 *.~lock.*
 node_modules/
+_App_Node_Hoteles/
