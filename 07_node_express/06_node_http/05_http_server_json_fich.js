@@ -1,11 +1,10 @@
 var http = require("http");
 var url = require("url");
-var clientes = [
-    { nombre: "Pepito", pedidos: 12 },
-    { nombre: "Juanito", pedidos: 23 },
-    { nombre: "Felipito", pedidos: 34 },
-    { nombre: "Otro", pedidos: 45 },
-];
+var fs = require("fs");
+
+var clientes = JSON.parse(fs.readFileSync("clientes.json").toString());
+
+// http://localhost/clientes/45
 var server = http.createServer(
     (request, response) => {
         var miUrl = url.parse(request.url, true);
@@ -21,8 +20,6 @@ var server = http.createServer(
         } else {
             response.writeHead(404);
         }
-        // http://localhost/clientes/45
-        // http://localhost?clientes=45
     }
 );
 server.listen(8888);
