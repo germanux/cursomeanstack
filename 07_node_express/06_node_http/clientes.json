@@ -1,0 +1,6 @@
+[
+    { "nombre": "Pepito", "pedidos": 12 },
+    { "nombre": "Juanito", "pedidos": 23 },
+    { "nombre": "Felipito", "pedidos": 34 },
+    { "nombre": "Otro", "pedidos": 45 }
+]
