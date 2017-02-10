@@ -1,5 +1,6 @@
 let http = require("http");
 let url = "http://nodejs.org/dist/index.json";
+// let url = "http://www.publico.es/sitemap-index.xml";
 let datosPlanos = "";
 
 let callbackRes = (res) => {
@@ -10,7 +11,18 @@ let callbackRes = (res) => {
     let error;
     if (codigoEstado !== 200) {
         error = new Error("Respues fallida.\n" +
-            "Código de estado: ${codigoEstado}");
+            `Código de estado: ${codigoEstado}`);
+    } else if (!/^application\/json/.test(tipoContenido)) {
+        error = new Error("Contenido invalido\n" +
+            `Se esperaba application/json pero se ha recibido ${tipoContenido}`);
+    } else {
+        const tamano = res.headers["content-length"];
+        console.log("Recibidos " + tamano + " bytes" + " por método " + res.method);
+    }
+    if (error) {
+        console.log(error.message);
+        res.resume();
+        return;
     }
     res.setEncoding("utf8");
 
@@ -19,7 +31,7 @@ let callbackRes = (res) => {
         try {
             let datosParseados =
                 JSON.parse(datosPlanos);
-            console.log(datosParseados);
+            console.log(datosParseados[0]);
         } catch (e) {
             console.log(e.message);
         }
