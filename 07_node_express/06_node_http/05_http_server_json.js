@@ -20,6 +20,7 @@ var server = http.createServer(
             response.end(JSON.stringify(clientes));
         } else {
             response.writeHead(404);
+            response.end("ERROR");
         }
         // http://localhost/clientes/45
         // http://localhost?clientes=45
