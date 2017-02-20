@@ -15,7 +15,6 @@ var SchemaRoom = new Schema({
     }
 });
 
-
 var SchemaCustomer = new Schema({
     //_id: Schema.Types.ObjectId,
     name: {
@@ -34,7 +33,6 @@ var SchemaCustomer = new Schema({
         }
     }
 });
-
 
 var SchemaBooking = new Schema({
     customer_id: {

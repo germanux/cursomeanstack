@@ -10,8 +10,13 @@ miLibroDeHistoria = new Libro({
 });
 miLibroDeHistoria.save((error) => {
     if (error) {
-
         console.error("Pues no se ha guardado! ");
+
+        Libro.schema.eachPath((campo) => {
+            if (error.errors[campo]) {
+                console.error(error.errors[campo].message);
+            }
+        });
         lista_campos = ["titulo", "campos_biblioteca.reservas", "categoria"];
         lista_campos.forEach((campo) => {
             if (error.errors[campo]) {

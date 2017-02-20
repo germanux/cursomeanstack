@@ -1,4 +1,4 @@
-solo_local/
+﻿solo_local/
 *.odp
 *.odp#
 curriculum/
@@ -18,5 +18,4 @@ plugins/
 *.wt
 *.~lock.*
 node_modules/
-_App_Node_Hoteles/
 /_AppReservas/bd_hotel

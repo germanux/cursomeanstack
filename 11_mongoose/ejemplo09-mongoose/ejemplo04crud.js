@@ -4,11 +4,18 @@ var Libro = require("./ejemplo04model")
 
 function getLibros(limit, skip) {
     //return Libro.find() // Paginad!
+    var array = [];
+
+    Libro.find().limit(limit).exec((libro) => {
+        array.push(libro);
+    });
+    return;
 }
 
 function getLibroById(_id) {
     Libro.findById(_id, (error, libro) => {
         //TODO:
+        console.log(libro.titulo);
     })
 }
 
