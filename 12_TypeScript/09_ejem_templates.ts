@@ -1,20 +1,21 @@
-class Silla {
+class Silla { 
     nombre: string;
     constructor (nom : string) { this.nombre = nom; }
+    toString() :string{ return this.nombre; }
 }
 class Sofa {
     nombre: string;
     constructor (nom : string) { this.nombre = nom; }
+    toString() :string{ return this.nombre; }
 }
-abstract class DAOGenerico2 <T> {
-    abstract add(objeto :T);
-    abstract del(objeto :T);
+abstract class DAOGenerico2 <T,W> {
+    abstract add(objeto :T);0
     abstract list():T[];
     stringify(objeto :T){
         return objeto+"";    
     }
 }
-class ArrayGenericDAO2 <T> extends DAOGenerico2<T>{
+class ArrayGenericDAO2 <T,W> extends DAOGenerico2<T,W>{
     private almacen :T[] = [];
     add(objeto: T){
         this.almacen.push(objeto);
@@ -28,6 +29,9 @@ class ArrayGenericDAO2 <T> extends DAOGenerico2<T>{
     list():T[] {
         return this.almacen;
     }
+}
+function miFun(unaFun: Function) {
+
 }
 var daoSilla: DAOGenerico2<Silla> = new ArrayGenericDAO2<Silla>();
 var daoSofa: DAOGenerico2<Silla> = new ArrayGenericDAO2<Silla>();
