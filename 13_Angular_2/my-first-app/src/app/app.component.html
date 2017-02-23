@@ -1,0 +1,22 @@
+<header>
+    <h1>
+        {{title}}
+    </h1>
+    <!--<h2>
+        El nombre indicado es
+        <p>{{nombre}}</p>
+    </h2>-->
+</header>
+<section>
+    <!--<ul>
+        <li *ngFor="let room of rooms; let i = index; let esPar = odd;">{{i+1}} - {{room.id}} {{room.getType()}} - {{esPar}}</li>
+    </ul>-->
+
+    <label>Nombre: </label><input [(ngModel)]="customerSelected.name" placeholder="Nombre..."><br/><br/>
+    <label>Email: </label><input [(ngModel)]="customerSelected.email" type="email" placeholder="Email..."><br/><br/>
+    <button (click)="addCustomer(customerSelected)">Añadir</button>
+    <ul>
+        <li *ngFor="let customer of customers; let i = index; let esPar = odd;" (click)="selectCustomer(customer)">
+            {{i+1}} - {{customer.name}} {{customer.email}}</li>
+    </ul>
+</section>
