@@ -5,8 +5,7 @@ import { CustomerCompComponent } from './customer-comp/customer-comp.component';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
- /* directives: [CustomerCompComponent]*/
-  
+ /* directives: [CustomerCompComponent]*/  
 })
 export class AppComponent {
   title = 'Node Hoteles';
