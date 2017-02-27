@@ -1,16 +1,22 @@
-<!DOCTYPE html>  
-<html lang="en">  
-<head>  
-  <meta charset="UTF-8">
-  <title>My Aplicación con Sockets</title>
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="main.js"></script>
-</head>  
-<body>  
-  <h1>Chat Node JS</h1>
-  <div id="messages"></div>
-  <br/>
-  <form>
-  </form>
-</body>  
-</html>  
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Aplicación con Sockets</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <h1>Chat Node JS</h1>
+    <div id="divMessages"></div>
+    <br/>
+    <form onsubmit="return enviarMensaje(this)">
+        <input type="text" id="username" placeholder="Tu nombre" />
+        <input type="text" id="texto" placeholder="Escribe tu mensaje" />
+        <input type="submit" value="Enviar!" />
+    </form>
+</body>
+
+</html>
