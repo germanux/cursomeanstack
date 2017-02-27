@@ -6,13 +6,10 @@ let contador = 0;
 
 var messages = [{
     id: 1,
-    text: "Primer mensaje del serv.",
-    author: "Servidor"
-}, {
-    id: 2,
-    text: "Otro mensaje",
+    text: "Primer mensaje del servidor",
     author: "Servidor"
 }];
+var socketsUsuario = {};
 
 app.use(express.static('public'));
 
@@ -25,9 +22,18 @@ function alConectarseAlguien(socket) {
 
     socket.emit("mensajes", messages);
 
+    socket.on("identificar", function(data) {
+        socketsUsuario[data.author] = socket;
+    });
     socket.on("nuevo-mensaje", function(data) {
         messages.push(data);
         io.sockets.emit("mensajes", messages);
+    });
+    socket.on("nuevo-mensaje-privado", function(data) {
+        var socketDestino = socketsUsuario[data.destinatario];
+        if (socketDestino) {
+            socketDestino.emit("mensaje-privado", data);
+        }
     });
     socket.on("disconnect", function() {
         contador--;

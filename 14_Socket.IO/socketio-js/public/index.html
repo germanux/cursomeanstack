@@ -10,13 +10,20 @@
 
 <body>
     <h1>Chat Node JS</h1>
-    <div id="divMessages"></div>
     <br/>
-    <form onsubmit="return enviarMensaje(this)">
+    <form onsubmit="return identificar(this)">
         <input type="text" id="username" placeholder="Tu nombre" />
+        <input type="submit" value="Identificar" />
+    </form>
+    <form onsubmit="return enviarMensaje(this)">
         <input type="text" id="texto" placeholder="Escribe tu mensaje" />
+        <input type="text" id="destinatario" placeholder="Destinatario" />
         <input type="submit" value="Enviar!" />
     </form>
+    <h2>Mensajes privados</h2>
+    <div id="divPrivados"></div>
+    <h2>Mensajes publicos</h2>
+    <div id="divMessages"></div>
 </body>
 
 </html>

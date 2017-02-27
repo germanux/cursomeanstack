@@ -1,13 +1,20 @@
 // Establecemos la conexión creando un nuevo socket
 
-var socket = io.connect("http://localhost:8080", { "forceNew": true });
+var socket = io.connect("/", { "forceNew": true });
 
 socket.on("mensajes", alRecibirMensaje);
+socket.on("mensaje-privado", alRecibirMensajePrivado);
 
 function alRecibirMensaje(data) {
-    //alert(JSON.stringify(data));
-
     mostrarMensajes(data);
+}
+
+function alRecibirMensajePrivado(data) {
+    document.getElementById("divPrivados").innerHTML +=
+        `<div>
+            <strong>${data.author}</strong>: 
+            <em>${data.text}</em>
+       </div>`;
 }
 
 function mostrarMensajes(data) {
@@ -18,9 +25,17 @@ function mostrarMensajes(data) {
                 <em>${elem.text}</em>
             </div>
         `);
-    }).join("-");
+    }).join(" ");
 
     document.getElementById("divMessages").innerHTML = html;
+}
+
+function identificar(e) {
+    var nuevoMensaje = {
+        author: document.getElementById("username").value
+    };
+    socket.emit("identificar", nuevoMensaje);
+    return false;
 }
 
 function enviarMensaje(e) {
@@ -28,6 +43,12 @@ function enviarMensaje(e) {
         author: document.getElementById("username").value,
         text: document.getElementById("texto").value
     };
-    socket.emit("nuevo-mensaje", nuevoMensaje);
+    var destinatario = document.getElementById("destinatario").value;
+    if (destinatario == "") {
+        socket.emit("nuevo-mensaje", nuevoMensaje);
+    } else {
+        nuevoMensaje.destinatario = destinatario;
+        socket.emit("nuevo-mensaje-privado", nuevoMensaje);
+    }
     return false;
 }
