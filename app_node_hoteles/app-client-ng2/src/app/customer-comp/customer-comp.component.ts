@@ -23,4 +23,9 @@ export class CustomerCompComponent implements OnInit {
   enviar() {
     this.customServ.enviar(this.customer);
   }
+  recibir() {
+    this.customServ.recibir(this.customer.name, function(datos) {
+      alert("¡Hemos recibido datos!" + datos);
+    });
+  }
 }
