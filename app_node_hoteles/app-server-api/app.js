@@ -1,4 +1,5 @@
 var express = require('express');
+var cors = require('cors');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -9,6 +10,8 @@ var index = require('./routes/index');
 var customers = require('./routes/api/customers');
 
 var app = express();
+
+app.use(cors());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

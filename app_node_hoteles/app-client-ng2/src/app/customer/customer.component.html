@@ -1,0 +1,7 @@
+<p>
+    Cliente:<br/> Nombre: <input type="text" placeholder="Nombre" [(ngModel)]="customer.name" /><br/> Email: <input type="email" placeholder="Email" [(ngModel)]="customer.email" /><br/>
+
+    <input type="button" (click)="enviarHttp()" value="Enviar"><br/>
+    <input type="button" (click)="recibirHttp()" value="Recibir"> {{customers}}
+
+</p>

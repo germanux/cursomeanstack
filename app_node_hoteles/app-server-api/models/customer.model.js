@@ -1,8 +1,7 @@
-var mongoose = require("mongoose");
+var moongose = require("mongoose");
 var Schemas = require("./schema");
 
 function grabar(customer, callback) {
-
     let customerModel = new Schemas.CustomerModel(customer);
 
     customerModel.save((error, customer) => {
@@ -14,8 +13,9 @@ function grabar(customer, callback) {
         if (typeof callback != "undefined") {
             callback(error, customer);
         }
-    })
+    });
 }
+
 
 function leer(customer, callback) {
     let name = customer.name;
@@ -25,7 +25,8 @@ function leer(customer, callback) {
             if (typeof callback != "undefined") {
                 callback(error, customers);
             }
-        });
+        }
+    );
 }
 
 module.exports.grabar = grabar;

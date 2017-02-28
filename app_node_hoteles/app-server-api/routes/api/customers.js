@@ -1,39 +1,52 @@
 var express = require('express');
 var router = express.Router();
 var model = require("../../models/customer.model");
-
-// router.use(require("body-parser").json());
+//var Customer = require
 
 /* GET users listing. */
 router.get('/name/:name', function(req, res, next) {
     let name = req.params.name;
+
     if (name == null) {
         res.statusCode = 404;
         res.send("No encontrado!");
     } else {
-        var fnCallback = function(error, customer) {
+
+        var fnCallback = function(error, customers) {
             if (error) {
-                console.log("No se ha leido de la bbdd");
+                console.error("No se ha leido de la bbdd");
             } else {
-                res.json(customer);
+                res.json(customers);
             }
         }
-        model.leer({ name: name }, fnCallback);
+
+        model.leer({ "name": name }, fnCallback);
+
+
     }
 });
-/* POST metodo */
+
+// Post metodo
+
 router.post("/", function(req, res) {
-    let customer = req.body;
+    /*let JSONCustomer = req.body;
+    let customer = JSON.parse(JSONCustomer);*/
+    /*let customer = {
+        "name": req.body.name,
+        "email": req.body.email
+    };
+    console.log(req.body.name);*/
+    customer = req.body;
 
-    console.log(req.body.name);
-
-    model.grabar(customer, (error, customer) => {
+    var fnCallback = function(error, customer) {
         if (error) {
-            console.log("No se ha leido de la bbdd");
+            console.error("No se ha leido de la bbdd");
         } else {
             res.json(customer);
         }
-    });
-})
+    };
+
+    model.grabar(customer, fnCallback);
+});
 
 module.exports = router;
