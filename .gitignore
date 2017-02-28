@@ -19,3 +19,4 @@ plugins/
 *.~lock.*
 node_modules/
 /_AppReservas/bd_hotel
+/app_node_hoteles/db_hotels
