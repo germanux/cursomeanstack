@@ -1,0 +1,21 @@
+{
+  "name": "ejemplo03-express-dropbox",
+  "version": "1.0.0",
+  "description": "Ejemplo passport con dropbox",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "passport",
+    "dropbox"
+  ],
+  "author": "rubengomez78@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "express-session": "^1.14.2",
+    "passport": "^0.3.2",
+    "passport-dropbox": "^2.0.0"
+  }
+}
