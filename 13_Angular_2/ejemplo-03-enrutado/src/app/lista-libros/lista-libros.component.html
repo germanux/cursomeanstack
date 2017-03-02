@@ -1,0 +1,12 @@
+<p>
+  lista-libros works!
+  <tr *ngFor="let libro of libros" >
+    <td>{{libro.titulo}} -
+      /consultar/{{libro.id}} 
+      /consultar/:variable
+      <a [routerLink]="['/consultar',libro.id]">
+      Consultar libro
+      </a></td>
+    
+  </tr>
+</p>

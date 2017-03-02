@@ -1,0 +1,32 @@
+{
+  "libros": [
+    {
+      "id": 1,
+      "titulo": "Titulo 1"
+    },
+    {
+      "id": 2,
+      "titulo": "Titulo 2"
+    },
+    {
+      "id": 3,
+      "titulo": "Titulo 3"
+    },
+    {
+      "id": 4,
+      "titulo": "Titulo 4"
+    },
+    {
+      "id": 5,
+      "titulo": "Titulo 5"
+    },
+    {
+      "id": 6,
+      "titulo": "Mi titulo creado"
+    },
+    {
+      "id": 7,
+      "titulo": "Titulito"
+    }
+  ]
+}
